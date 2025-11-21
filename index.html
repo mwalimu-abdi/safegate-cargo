@@ -385,6 +385,36 @@ body {
     display: flex;
     align-items: center;
 }
+/* Prevent top bar from stretching wider than screen */
+.top-bar {
+  overflow-x: hidden;
+}
+
+/* Menu container must not expand horizontally */
+.animated-menu {
+  max-width: 100%;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+/* Reduce spacing + allow items to shrink on small screens */
+@media (max-width: 640px) {
+  .animated-menu {
+    gap: 10px;
+    padding-right: 10px;
+  }
+
+  .menu-item {
+    font-size: 14px;
+    padding: 4px 0;
+  }
+
+  /* Title movement reduced so it never pushes out of screen */
+  .top-bar.menu-open .site-title {
+    transform: translateX(140px);
+  }
+}
+
 
 /* MENU BUTTON */
 .menu-btn {
