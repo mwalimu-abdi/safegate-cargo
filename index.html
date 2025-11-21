@@ -154,29 +154,29 @@ body {
 
 
 }
-.floating-whatsapp {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    color: white;
-    border-radius: 50%;
+.falling-title {
+    z-index: 5;
+    margin-top: 120px;
     display: flex;
-    align-items: center;
+    gap: 4px;              /* smaller gap */
+    font-size: 24px;       /* slightly smaller */
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;   /* reduce spacing */
+    text-align: center;
     justify-content: center;
-    font-size: 32px;
-    z-index: 9999;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-wrap: wrap;       /* 🔥 allows letters to wrap instead of going off screen */
 }
 
-.floating-whatsapp:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+/* EXTRA clean mobile optimization */
+@media (max-width: 400px) {
+    .falling-title {
+        font-size: 20px;
+        gap: 2px;
+    }
 }
+
 
 
 .top-menu a:hover {
@@ -695,6 +695,7 @@ if (menuBtn && animatedMenu) {
   
 </body>
 </html>
+
 
 
 
