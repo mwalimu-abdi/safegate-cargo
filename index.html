@@ -414,6 +414,25 @@ body {
     transform: translateX(140px);
   }
 }
+/* Make horizontal menu always fit inside phone screen */
+.animated-menu {
+    display: flex;
+    gap: 12px;              /* smaller gap */
+    flex-wrap: nowrap;
+    overflow-x: auto;       /* allows scrolling INSIDE the menu only */
+    white-space: nowrap;    /* keeps items one line */
+    max-width: 100%;        /* never exceed screen width */
+}
+
+/* Hide scrollbar for cleaner look */
+.animated-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-item {
+    flex-shrink: 0;         /* prevents menu words from stretching top bar */
+    padding-right: 10px;
+}
 
 
 /* MENU BUTTON */
@@ -667,7 +686,6 @@ if (menuBtn && animatedMenu) {
   
 </body>
 </html>
-
 
 
 
