@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>SAFEGATE DXB — Cargo Services</title>
+  <meta name="description" content="SAFEGATE DXB — Air, Sea & Land freight, clearing & forwarding. Request a quote, track shipments, and contact us." />
+  <meta name="theme-color" content="#0b3659" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%230b3659%22/></svg>">
+
+  <style>
+    /* === Variables === */
+    :root{
+      --bg:#f7f9fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#ff7a00;    /* orange accent */
+      --primary:#0b3659;   /* deep navy */
+      --yassir-blue: #0067ff; /* exact Yassir blue used in header */
+      --glass: rgba(11,54,89,0.06);
+      --radius:14px;
+      --maxw:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+    .hero-email {
+    position: absolute;
+    top: 25px;             /* adjust to fine-tune placement */
+    left: 40px;            /* adjust to move left/right */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    z-index: 10;           /* ensures it stays above the falling letters */
+}
+
+.hero-email i {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.hero-email a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.hero-email a:hover {
+    text-decoration: underline;
+}
+
+.hero-contact-line {
+    position: absolute;
+    top: 85px;             /* adjust if needed based on email position */
+    left: 40px;            /* keeps alignment with email */
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+     color: #ffffff;
+    font-weight: 500;
+    gap: 8px;
+}
+
+.hero-phone-icon {
+    font-size: 20px;
+}
+
+.hero-phone-text strong {
+    font-weight: 700;
+}
+
+
+
+
+    /* === Reset-ish + base === */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#f7f9fb 0%, #eef3f8 100%);
+      color:#0b1b2b;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:0; /* removed global padding so header is full-width like reference */
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    a{color:var(--primary); text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+
+    /* === Layout container (page content) === */
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:32px 20px; 
+    }
+
+    /* ================================
+       YASSIR-STYLE 3-LAYER HEADER
+       ================================ */
+
+    /* 1) Top blue bar */
+    /* STICKY BLUE TOP BAR */
+/* hidden initially */
+/* TOP BAR */
+/* STICKY BLUE TOP BAR */
+/* hidden initially */
+.top-bar {
+    position: fixed;
+    top: 0%;         
+    left: 0;
+    width: 100%;
+    background: #0b3659;
+    color: white;
+    padding: 14px 0;
+    z-index: 9999;
+    transition: top 0.4s ease;
+    height: 100px;
+}
+
+body {
+    margin: 0;
+}
+
+/* MENU INSIDE BLUE BAR */
+.top-menu {
+    display: flex;
+    gap: 40px;
+}
+
+
+/* MENU INSIDE BLUE BAR */
+.top-menu {
+    display: flex;
+    gap: 40px;
+}
+
+.top-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+
+
+}
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+
+.top-menu a:hover {
+    text-decoration: underline;
+}
+
+/* PREVENT BODY FROM HIDING UNDER FIXED HEADER */
+body {
+    padding-top: 70px; /* adjust if your bar height changes */
+}
+
+    .y-mid .search input{
+      border:0;background:transparent;outline:none;font-size:14px;width:100%;
+    }
+    /* center logo area (we'll place falling letters here) */
+    .y-mid .center { justify-content:center; flex:1; }
+    .y-mid .logo-wrap {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:64px;
+    }
+    /* right icons */
+    .y-mid .right { gap:18px; font-size:20px; color:#333; }
+
+    /* 3) Bottom navigation bar (white) */
+    .y-nav {
+      width:100%;
+      background:#fff;
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      padding:12px 20px;
+      border-bottom:1px solid #eee;
+      font-weight:600;
+      font-size:16px;
+    }
+    .y-nav a { color:#111; text-decoration:none; }
+    .y-nav a:hover { color: var(--yassir-blue); text-decoration:underline; }
+
+    /* ================================
+       HERO (your existing big hero)
+       kept as full-screen below header
+       ================================ */
+
+    .hero-header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.hero-subtext {
+    z-index: 5;
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: 500;
+    color: white;
+    max-width: 900px;
+    text-align: center;
+    line-height: 1.3;
+    animation: fadeInUp 1.5s ease forwards;
+    opacity: 0;
+}
+
+/* soft fade + upward motion */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.hero-header .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 135%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+.falling-title {
+      z-index: 5;
+      margin-top: 120px;
+      display: flex;
+      gap: 8px;
+      font-size: 85px;
+      font-weight: 900;
+      color:white;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-align:center;
+      justify-content:center;
+    }
+    .hero-pillars {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #e5e5e5;
+    text-align: center;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeInUp 1.8s ease forwards;
+}
+
+.hero-pillars .dot {
+    margin: 0 8px;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+
+.hero-nav {
+    position: relative;
+    z-index: 5;
+}
+/* WHY CHOOSE US - FULL WIDTH */
+.why-us {
+    width: 100%;
+    margin: 0;
+    padding: 30px 0; /* slimmer height */
+    text-align: center;
+}
+
+.why-us h2 {
+    font-size: 34px;
+    margin-bottom: 25px;
+    font-weight: 800;
+    color: #0b3659;
+    width: 100%;
+}
+
+/* FULL-WIDTH GRID */
+.why-grid {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* SHORTER, WIDER CARDS */
+.why-card {
+    background: #fff;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 18px;
+    min-height: 300px;  /* SHORTER! */
+    height: auto;
+    border-style: solid;
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.12);
+}
+
+/* SHORTER IMAGE */
+.why-card img {
+    width: 100%;
+    height: 120px;  /* SHORTER! */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.why-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.why-card p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.45;
+}
+
+/* RESPONSIVE */
+@media (max-width: 990px) {
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* TOP BAR */
+.top-bar {
+    width: 100%;
+    background: #053d7c;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+}
+
+/* MENU BUTTON */
+.menu-btn {
+    background: #053d7c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    size: 30px;
+}
+
+/* MENU CONTAINER */
+.animated-menu {
+    display: flex;
+    gap: 25px;
+    margin-left: 30px;
+    overflow: hidden;
+}
+
+/* MENU ITEMS (animated) */
+.menu-item {
+    transform: translateX(-200%);
+    opacity: 0;
+    padding: 8px 0;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 15px;
+    transition: transform 0.5s ease, opacity 0.4s ease;
+    transition-delay: calc(var(--i) * 0.15s);
+}
+
+/* WHEN MENU ACTIVE - ITEMS SLIDE IN */
+.animated-menu.active .menu-item {
+    transform: translateX(0);
+    opacity: 1;
+}
+.menu-item:hover {
+    color: #00eaff;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.7);
+}
+
+.menu-item:hover::after {
+    width: 60%;
+}
+.boll{
+  font-weight: 00;
+}
+
+
+
+
+    .letter {
+      opacity: 0;
+      position: relative;
+      display:inline-block;
+      animation: drop 1.1s forwards ease-out;
+    }
+
+    @keyframes drop {
+      0%   { opacity: 0; transform: translateY(-140px) scale(1.02); }
+      60%  { opacity: 1; transform: translateY(10px) scale(1); }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* small responsiveness */
+    @media (max-width:980px){
+      .y-mid .search { width:220px; }
+      .falling-title { font-size:56px; margin-top:80px; }
+    }
+    @media (max-width:620px){
+      .y-topbar { padding:8px 12px; font-size:13px; }
+      .y-mid { padding:12px 16px; height:84px; }
+      .y-mid .search { width:140px; }
+      .y-nav { gap:16px; font-size:14px; padding:10px; }
+      .falling-title { font-size:40px; margin-top:50px; letter-spacing:2px; }
+    }
+
+    /* === Rest of your original page styling (kept mostly intact) === */
+    .hero{
+      background:linear-gradient(90deg, rgba(11,54,89,0.04), rgba(255,255,255,0));
+      border-radius:18px;padding:28px;margin-bottom:28px;
+      display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;
+    }
+    .hero .eyebrow{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--primary);font-weight:600}
+    .hero h2{margin:10px 0 12px;font-size:28px;color:var(--primary)}
+    .hero p{margin:0 0 18px;color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;font-weight:700;border:0;cursor:pointer;box-shadow:0 6px 18px rgba(11,54,89,0.06);}
+    .btn.primary{background:var(--primary);color:white}
+    .btn.ghost{background:transparent;border:1px solid rgba(11,54,89,0.06)}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
+    .service{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(11,54,89,0.04);transition:transform .18s ease, box-shadow .18s ease;}
+    .service:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,54,89,0.08)}
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-bottom:40px}
+
+  </style>
+</head>
+<body>
+
+  
+<div class="top-bar">
+    <button id="menuToggle" class="menu-btn">☰</button>
+
+    <nav class="animated-menu" id="animatedMenu">
+        <a class="menu-item" style="--i:1" href="#home">Home</a>
+       <a class="menu-item" style="--i:2" href="about.html">About Us</a>
+        <a class="menu-item" style="--i:3" href="#services">Our Services</a>
+        <a class="menu-item" style="--i:4" href="#contact">Contact</a>
+        <a class="menu-item" style="--i:5" href="#staff">Staff Members</a>
+        <a class="menu-item" style="--i:6" href="#quote">Ask for a Quote</a>
+    </nav>
+</div>
+
+  <!-- 3) bottom nav bar -->
+  <nav class="y-nav" role="navigation" aria-label="Main navigation">
+   
+  </nav>
+
+  <!-- ======= YOUR EXISTING HERO (kept as full-screen below header) ======= -->
+  <header class="hero-header">
+    <img src="data/images/img1.jpg" class="hero-bg" alt="">
+    <div class="overlay"></div>
+
+    <div class="hero-email">
+    <i class="fa fa-envelope"></i>
+    <a href="mailto:safegatedxb@gmail.com">safegatedxb@gmail.com</a>
+</div>
+<div class="hero-contact-line">
+    <span class="hero-phone-icon">📞</span>
+    <span class="hero-phone-text">Call Us: <strong>0705 044 066</strong></span>
+</div>
+
+
+    <div id="fallTitle" class="falling-title"></div>
+   <div class="hero-subtext">
+    Delivering cargo safely, swiftly, and across the globe —
+    your trusted logistics partner.
+</div>
+<div class="hero-pillars">
+    <span class="boll">Safety</span>
+    <span class="dot">•</span>
+    <span class="bbd">Speed</span>
+    <span class="dot">•</span>
+    <span class="bbd">Trust</span>
+</div>
+
+
+
+</header>
+<a href="https://wa.me/2547050440066" class="floating-whatsapp" target="_blank" aria-label="WhatsApp Chat">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+  <!-- ======= PAGE CONTENT (unchanged, kept within .container) ======= -->
+  <div class="container">
+    <!-- SERVICES -->
+    <section id="services" aria-labelledby="services-title" style="margin-bottom:22px">
+      <h2 id="services-title" style="margin:12px 0 18px">Our Services</h2>
+      <div class="services" role="list">
+        <article class="service" role="listitem" aria-labelledby="s1">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="icon">✈️</div>
+            <div>
+              <h3 id="s1">Air Freight</h3>
+              <p>Fast international air freight with time-critical shipment handling and door-to-door options.</p>
+            </div>
+          </div>
+          <p style="margin-top:12px"><strong>When to use:</strong> Urgent deliveries, perishable goods, high-value cargo.</p>
+        </article>
+
+        <article class="service" role="listitem" aria-labelledby="s2">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="icon">🚢</div>
+            <div>
+              <h3 id="s2">Sea Freight</h3>
+              <p>Cost-effective ocean freight: FCL & LCL, consolidated shipments, and reliable schedules.</p>
+            </div>
+          </div>
+          <p style="margin-top:12px"><strong>When to use:</strong> Large-volume imports/exports, non-urgent deliveries.</p>
+        </article>
+
+        <article class="service" role="listitem" aria-labelledby="s3">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="icon">🚚</div>
+            <div>
+              <h3 id="s3">Land Freight</h3>
+              <p>Regional trucking and last-mile delivery with GPS-enabled fleet tracking and scheduled pickups.</p>
+            </div>
+          </div>
+          <p style="margin-top:12px"><strong>When to use:</strong> Domestic distribution, cross-border trucking within the region.</p>
+        </article>
+      </div>
+    </section>
+    <section class="why-us">
+    <h2>Why Choose Us As Your Logistic Company?</h2>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <img src="data/images/img9.jpg" alt="Customer Service">
+            <h3>Customer Service You Can Always Trust</h3>
+            <p>
+                We believe great logistics begins with great communication. At SAFEGATE DXB,
+                our support team provides fast responses, real-time updates, and personalized help
+                to ensure a smooth and stress-free delivery experience.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <img src="data/images/img13.jpg" alt="Safe Delivery">
+            <h3>Safe & Secure Delivery</h3>
+            <p>
+                We handle every shipment with care — from packaging to transportation.
+                Your goods are delivered safely across the Gulf and beyond with maximum reliability.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <img src="data/images/img14.jpg" alt="Fast Delivery">
+            <h3>Fast & Reliable Shipping</h3>
+            <p>
+                Timely deliveries are our priority. Whether local or international,
+                our optimized routes and dedicated team ensure your shipment arrives right on time.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <img src="data/images/track.jpg" alt="Real-time Tracking">
+            <h3>Track Your Goods Anytime</h3>
+            <p>
+                Stay updated with real-time tracking. Know exactly where your shipment is
+                and when it will arrive — total transparency from start to finish.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+  
+
+    <footer style="padding:18px 0;color:var(--muted);font-size:14px;text-align:center">
+      <div>© SAFEGATE DXB <span id="year"></span> · <a href="#privacy">Privacy</a> · <a href="#terms">Terms</a></div>
+    </footer>
+  </div>
+
+  <script>
+/* ============================================================
+   1. MENU TOGGLE (slide-in animation)
+   ============================================================ */
+const menuBtn = document.getElementById("menuToggle");
+const animatedMenu = document.getElementById("animatedMenu");
+
+if (menuBtn && animatedMenu) {
+    menuBtn.addEventListener("click", () => {
+        animatedMenu.classList.toggle("active");
+    });
+}
+
+
+/* ============================================================
+   2. FALLING LETTERS (HERO ONLY — repeats every 5 sec)
+   ============================================================ */
+(function () {
+    const title = "SAFEGATE DXB";
+    const target = document.getElementById("fallTitle");
+    if (!target) return;
+
+    function run() {
+        target.innerHTML = "";
+        [...title].forEach((ch, i) => {
+            const sp = document.createElement("span");
+            sp.textContent = ch;
+            sp.className = "letter";
+            sp.style.animationDelay = (i * 0.25) + "s";
+            target.appendChild(sp);
+        });
+    }
+
+    run();
+    setInterval(run, 5000);
+})();
+</script>
+
+  
+</body>
+</html>
