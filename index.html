@@ -12,13 +12,18 @@
   <style>
 /* Top bar stays the same */
 .top-bar {
-    background: #004a8f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+   background: #004a8f;
     padding: 10px;
     display: flex;
     align-items: center;
-    position: relative;
-    height: 85px;
 }
+
+
 /* Title styling */
 .site-title {
     flex: 1;
@@ -484,15 +489,92 @@
     .service{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(11,54,89,0.04);transition:transform .18s ease, box-shadow .18s ease;}
     .service:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,54,89,0.08)}
     .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-bottom:40px}
+
+   
+   /* === SERVICE SECTIOM === */
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .services-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+  }
+
+  .services-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #333;
+  }
+
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+  }
+
+  .service-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-style: solid;
+
+  }
+
+  .service-card img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #222;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  @media (min-width: 1024px) {
+    .services-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
     .faq-section {
     padding: 20px;
-}
+ }
 
-.faq-section h2 {
+
+
+  .faq-section h2 {
     font-size: 32px;
     margin-bottom: 20px;
     font-weight: 700;
-}
+  }   
 
 .faq-item {
     border: 0.1px solid #ddd;
@@ -518,6 +600,9 @@
     font-size: 16px;
     line-height: 1.5;
     background: #fafafa;
+    max-height: 0;
+    overflow: hidden;
+  transition: max-height 0.5s ease;
 }
 
 /* Arrow */
@@ -538,6 +623,7 @@
 .faq-item.active .faq-answer {
     display: block;
     animation: fadeIn 0.3s ease;
+    max-height: 500px;
 }
 
 @keyframes fadeIn {
@@ -681,6 +767,116 @@
 
     </div>
 </section>
+
+<section class="services-section">
+  <h2>Our Services</h2>
+  <div class="services-container">
+    
+    <div class="service-card">
+      <img src="data/images/vehi.jpg" alt="Vehicle Transport">
+      <h3>Vehicle Transport</h3>
+      <p>Safe and reliable transportation of vehicles across cities and countries.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/lives.jpg" alt="Livestock Transport">
+      <h3>Livestock Transport</h3>
+      <p>Humane and secure transportation for all types of livestock.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/fragile.jpg" alt="Fragile Cargo">
+      <h3>Fragile Cargo</h3>
+      <p>Specialized handling for delicate and fragile goods with extra care.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/const.jpg" alt="Construction Material Hauling">
+      <h3>Construction Material Hauling</h3>
+      <p>Efficient transport of heavy construction materials to any site.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/med.jpg" alt="Medical Equipments">
+      <h3>Medical Equipments</h3>
+      <p>Timely and safe delivery of sensitive medical equipment.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/pharma.jpg" alt="Pharmaceutical Transport">
+      <h3>Pharmaceutical Transport</h3>
+      <p>Temperature-controlled transport for all pharmaceutical products.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/house.jpg" alt="Household Goods Moving">
+      <h3>Household Goods Moving</h3>
+      <p>Professional moving services for homes, ensuring all items arrive safely.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/event.jpg" alt="Event Logistics">
+      <h3>Event Logistics</h3>
+      <p>Complete logistical support for events, exhibitions, and conferences.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/express.jpg" alt="Express Cargo">
+      <h3>Express Cargo</h3>
+      <p>Fast and reliable express delivery services for urgent shipments.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/waste.jpg" alt="Waste Transport">
+      <h3>Waste Transport</h3>
+      <p>Environmentally safe transportation of industrial and residential waste.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/machine.jpg" alt="Machine Transport">
+      <h3>Machine Transport</h3>
+      <p>Secure transport for heavy machinery and industrial equipment.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/electro.jpg" alt="Electronic Transport">
+      <h3>Electronic Transport</h3>
+      <p>Safe handling and delivery of sensitive electronic devices and appliances.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/paper.jpg" alt="Paper and Lumber Transport">
+      <h3>Paper & Lumber Transport</h3>
+      <p>Transport of paper products and lumber efficiently and securely.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/contain.jpg" alt="Container Trucking">
+      <h3>Container Trucking</h3>
+      <p>Reliable container transportation services for domestic and international shipping.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/agri.jpg" alt="Agricultural Produce Transport">
+      <h3>Agricultural Produce Transport</h3>
+      <p>Safe and timely delivery of fresh agricultural produce.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/images/retail.jpg" alt="Retail Distributions">
+      <h3>Retail Distributions</h3>
+      <p>Efficient delivery solutions for retail stores and distribution networks.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="data/food.jpg" alt="Food and Beverage Transport">
+      <h3>Food & Beverage Transport</h3>
+      <p>Temperature-controlled and hygienic transportation for food and drinks.</p>
+    </div>
+
+  </div>
+</section>
+
 <section class="faq-section">
     <h2>FAQs</h2>
 
@@ -843,14 +1039,21 @@ document.addEventListener("click", function (event) {
 /* ============================================================
    3. FAQs
    ============================================================ */
-document.querySelectorAll(".faq-question").forEach(item => {
-    item.addEventListener("click", () => {
-        const parent = item.parentNode;
-        parent.classList.toggle("active");
+document.querySelectorAll(".faq-question").forEach(q => {
+    q.addEventListener("click", () => {
+        const faq = q.parentElement;
+
+        // Close other open FAQs (optional)
+        document.querySelectorAll(".faq-item").forEach(item => {
+            if (item !== faq) item.classList.remove("active");
+        });
+
+        // Toggle this one
+        faq.classList.toggle("active");
     });
 });
-
 </script>
+
 
   
 </body>
