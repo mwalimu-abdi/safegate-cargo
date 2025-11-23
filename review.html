@@ -7,6 +7,78 @@
   <link rel="stylesheet" href="testimonial.css">
 </head>
 <style>
+  /* Center the entire testimonial section */
+.testimonial-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  position: relative;
+  padding: 50px 0;
+}
+
+/* Center slider wrapper and prevent leaning left */
+.slider-wrapper {
+  width: 100%;
+  max-width: 800px;   /* IMPORTANT: keeps slider centered */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Center the slider container */
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+/* Make the slider track centered */
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+/* Each slide centered */
+.slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Center arrows perfectly */
+.arrow {
+  font-size: 40px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+  color: #222;
+  z-index: 5;
+}
+
+/* Left arrow position */
+.left-arrow {
+  left: -40px;  /* Make it visible */
+}
+
+/* Right arrow position */
+.right-arrow {
+  right: -40px;
+}
+
+/* Responsive fix for small screens */
+@media (max-width: 600px) {
+  .left-arrow { left: -15px; }
+  .right-arrow { right: -15px; }
+}
+
     /* Top bar stays the same */
 .top-bar {
   position: fixed;
