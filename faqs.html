@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>SAFEGATE DXB — Cargo Services</title>
+  <meta name="description" content="SAFEGATE DXB — Air, Sea & Land freight, clearing & forwarding. Request a quote, track shipments, and contact us." />
+  <meta name="theme-color" content="#0b3659" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%230b3659%22/></svg>">
+
+  <style>
+/* Top bar stays the same */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+   background: #004a8f;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    height: 85px;
+}
+
+
+/* Title styling */
+.site-title {
+    flex: 1;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+}
+
+
+/* MENU BUTTON ANIMATION */
+.menu-btn {
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* When active, rotate */
+.menu-btn.active {
+    transform: rotate(90deg);
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+    position: absolute;
+    top: 55px;
+    left: 10px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 180px;
+
+    /* Animation */
+    max-height: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Show menu */
+.dropdown-menu.open {
+    max-height: 500px; /* tall enough for all links */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Menu items */
+.dropdown-menu a {
+    padding: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #004a8f;
+    background: white;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu a:hover {
+    background: #004a8f;
+    color: white;
+}
+
+#safegate-faqs {
+  padding: 40px;
+  background: #f9f9f9;
+}
+
+#safegate-faqs h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 80px 20px 30px 20px; /* Add extra top padding */
+}
+
+.faq-container {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.faq-item {
+  position: relative;
+}
+
+.faq-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #ddd;
+}
+
+.faq-question {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: #f1f1f1;
+}
+
+.faq-left-arrow,
+.faq-arrow {
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.faq-question-text {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.faq-answer {
+  max-height: 0; /* start collapsed */
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 1000px; /* very large to fit any content */
+  padding: 15px 20px;
+}
+
+
+</style>
+<body>
+    <div class="top-bar">
+    <button id="menuToggle" class="menu-btn">☰</button>
+
+    <div class="site-title">SAFEGATE DXB</div>
+
+    <nav class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="service.html">Our Services</a>
+        <a href="contacts.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="quotes.html">Ask for a Quote</a>
+        <a href="faqs.html">FAQs</a>
+    </nav>
+</div>
+
+<section id="safegate-faqs">
+  <h2>FAQs</h2>
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Which cargo service near me is best?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        SAFEGATE DXB Cargo is your trusted cargo partner for fast, affordable, and safe deliveries from countries like Dubai, China, India, Turkey, the USA, Thailand, Canada, and Saudi Arabia to Kenya. We ensure smooth handling and reliable shipment tracking for all clients.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Which is the best freight forwarding company in Dubai?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        SAFEGATE DXB Cargo stands out as one of Dubai’s top freight forwarding companies due to our affordable rates, fast processing, and seamless shipping services to Kenya and East Africa.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Which company offers the best cargo service to Kenya?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        SAFEGATE DXB Cargo offers the most reliable and customer-friendly cargo solutions for shipping electronics, clothing, perfumes, home appliances, commercial goods, and more from multiple countries to Kenya.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">What cargo services does SAFEGATE DXB Cargo provide?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        We offer air cargo, sea cargo, door-to-door deliveries, commercial cargo, personal shipments, consolidation, and secure handling for fragile items. Customers can ship goods from Dubai, Turkey, China, India, USA, Canada, Thailand, and Saudi Arabia.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Which countries does SAFEGATE DXB Cargo ship from?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        We ship goods from Dubai, China, Turkey, India, USA, Thailand, Saudi Arabia, and Canada — safely delivered to Kenya, Uganda, Tanzania and Somalia.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">How long does shipping take?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        Shipping times vary depending on the country and method:<br>
+        • Dubai to Kenya: 3–5 days<br>
+        • China to Kenya: 5–10 days<br>
+        • Others depend on the selected shipping option.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Do you offer door-to-door delivery in Kenya?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        Yes, we offer fast and secure door-to-door delivery across all major cities in Kenya including Nairobi, Mombasa, Kisumu, Eldoret, and more.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">What items can I send with SAFEGATE DXB Cargo?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        You can ship electronics, fashion items, phones, perfumes, home goods, cosmetics, furniture, personal effects, and commercial goods. Restricted items depend on UAE & Kenya regulations.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+  </div>
+  </section>
+<script>
+ const menuBtn = document.getElementById("menuToggle");
+const menu = document.getElementById("dropdownMenu");
+
+menuBtn.addEventListener("click", function (event) {
+    event.stopPropagation(); // prevent closing immediately
+
+    menu.classList.toggle("open");
+    menuBtn.classList.toggle("active");
+
+    // Change button text
+    menuBtn.textContent = menu.classList.contains("open") ? "✕" : "☰";
+});
+/*=============================================================
+   4. FAQs
+   ============================================================ */
+const faqItems = document.querySelectorAll('#safegate-faqs .faq-item');
+
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-question');
+  const leftArrow = item.querySelector('.faq-left-arrow');
+  const rightArrow = item.querySelector('.faq-arrow');
+
+  question.addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+
+    // Close all items first
+    faqItems.forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.faq-left-arrow').style.transform = 'rotate(0deg)';
+      i.querySelector('.faq-arrow').style.transform = 'rotate(0deg)';
+    });
+
+    if(!isActive){
+      item.classList.add('active');
+      leftArrow.style.transform = 'rotate(-90deg)';
+      rightArrow.style.transform = 'rotate(90deg)';
+    }
+  });
+});
+
+</script>
+</body>
+</html>
