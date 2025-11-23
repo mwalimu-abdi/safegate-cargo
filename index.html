@@ -484,6 +484,67 @@
     .service{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(11,54,89,0.04);transition:transform .18s ease, box-shadow .18s ease;}
     .service:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,54,89,0.08)}
     .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-bottom:40px}
+    .faq-section {
+    padding: 20px;
+}
+
+.faq-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.faq-item {
+    border: 0.1px solid #ddd;
+    margin-bottom: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    background: #fff;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    background: #fafafa;
+}
+
+/* Arrow */
+.arrow {
+    border: solid #004a8f;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 6px;
+    transform: rotate(45deg);
+    transition: 0.3s;
+}
+
+.faq-item.active .arrow {
+    transform: rotate(-135deg);
+}
+
+/* Show answer */
+.faq-item.active .faq-answer {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 
 
 
@@ -620,6 +681,93 @@
 
     </div>
 </section>
+<section class="faq-section">
+    <h2>FAQs</h2>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>Which cargo service near me is best?</span>
+            <i class="arrow"></i>
+        </div>
+        <div class="faq-answer">
+            SAFEGATE DXB Cargo is your trusted cargo partner for fast, affordable, and safe deliveries from countries like Dubai, China, India, Turkey, the USA, Thailand, Canada, and Saudi Arabia to Kenya. We ensure smooth handling and reliable shipment tracking for all clients.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>Which is the best freight forwarding company in Dubai?</span>
+            <i class="arrow"></i>
+        </div>
+        <div class="faq-answer">
+            SAFEGATE DXB Cargo stands out as one of Dubai’s top freight forwarding companies due to our affordable rates, fast processing, and seamless shipping services to Kenya and East Africa.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>Which company offers the best cargo service to Kenya?</span>
+            <i class="arrow"></i>
+        </div>
+        <div class="faq-answer">
+            SAFEGATE DXB Cargo offers the most reliable and customer-friendly cargo solutions for shipping electronics, clothing, perfumes, home appliances, commercial goods, and more from multiple countries to Kenya.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>What cargo services does SAFEGATE DXB Cargo provide?</span>
+            <i class="arrow"></i>
+        </div>
+        <div class="faq-answer">
+            We offer air cargo, sea cargo, door-to-door deliveries, commercial cargo, personal shipments, consolidation, and secure handling for fragile items. Customers can ship goods from Dubai, Turkey, China, India, USA, Canada, Thailand, and Saudi Arabia.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>Which countries does SAFEGATE DXB Cargo ship from?</span>
+            <i class="arrow"></i>
+        </div>
+        <div class="faq-answer">
+            We ship goods from Dubai, China, Turkey, India, USA, Thailand, Saudi Arabia, and Canada — safely delivered to Kenya, Uganda, Tanzania and Somalia.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>How long does shipping take?</span>
+            <i class="arrow"></i>
+        </div>
+        <div class="faq-answer">
+            Shipping times vary depending on the country and method:
+            <br>• Dubai to Kenya: 3–5 days
+            <br>• China to Kenya: 5–10 days
+            <br>• Others depend on the selected shipping option.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>Do you offer door-to-door delivery in Kenya?</span>
+            <i class="arrow"></i>
+        </div>
+        <div class="faq-answer">
+            Yes, we offer fast and secure door-to-door delivery across all major cities in Kenya including Nairobi, Mombasa, Kisumu, Eldoret, and more.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>What items can I send with SAFEGATE DXB Cargo?</span>
+            <i class="arrow"></i>
+        </div>
+        <div class="faq-answer">
+            You can ship electronics, fashion items, phones, perfumes, home goods, cosmetics, furniture, personal effects, and commercial goods. Restricted items depend on UAE & Kenya regulations.
+        </div>
+    </div>
+</section>
+
 
   
 
@@ -691,6 +839,17 @@ document.addEventListener("click", function (event) {
     run();
     setInterval(run, 5000);
 })();
+
+/* ============================================================
+   3. FAQs
+   ============================================================ */
+document.querySelectorAll(".faq-question").forEach(item => {
+    item.addEventListener("click", () => {
+        const parent = item.parentNode;
+        parent.classList.toggle("active");
+    });
+});
+
 </script>
 
   
