@@ -552,8 +552,6 @@
     padding: 25px 15px;
     width: 100%; /* card expands fully */
     border-style: solid;
-    margin: 6px;
-    
     
   }
 
@@ -582,6 +580,138 @@
     transform: translateY(-6px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.15);
   }
+
+
+  .testimonial-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.review-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+/* Card Style */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  padding: 30px 20px;
+}
+
+.person-img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
+.review-text {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.6;
+  margin: 10px 0 15px 0;
+}
+
+.reviewer-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0066cc;
+}
+
+.reviewer-role {
+  font-size: 15px;
+  color: #777;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  font-weight: 600;
+  color: #0066cc;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.left-arrow {
+  left: 5px;
+}
+
+.right-arrow {
+  right: 5px;
+}
+
+.arrow:hover {
+  color: #004f9a;
+  transform: translateY(-50%) scale(1.15);
+}
+
+
+
+/* Dots */
+.slider-dots {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.slider-dots span {
+  height: 10px;
+  width: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 4px;
+  transition: 0.4s;
+}
+
+.slider-dots .active {
+  background: #007bff;
+  width: 14px;
+  border-radius: 12px;
+}
+
+
 
     .faq-section {
     padding: 20px;
@@ -655,7 +785,7 @@
 
      /* Footer */
     footer {
-      background:  #004a8f;
+      background: black;
       color: white;
       text-align: center;
       padding: 20px 10px;
@@ -897,7 +1027,62 @@
     </div>
 
   </div>
+  </section>
+
+<section class="testimonial-section">
+  <h2 class="review-title">What People Say About Us</h2>
+
+  <div class="slider-wrapper">
+
+    <!-- Left Arrow -->
+    <div class="arrow left-arrow">&#10094;</div>
+
+    <div class="slider-container">
+      <div class="slider-track">
+
+        <!-- Slide 1 -->
+        <div class="slide card">
+          <img src="data/images/person1.jpg" class="person-img" alt="">
+          <p class="review-text">
+            “They handled my cargo smoothly and professionally. Very reliable service.”
+          </p>
+          <h3 class="reviewer-name">Ahmed Noor</h3>
+          <p class="reviewer-role">Business Owner</p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide card">
+          <img src="data/images/person1.jpg" class="person-img" alt="">
+          <p class="review-text">
+            “SafeGate DXB Cargo is my trusted logistics partner. Always on time.”
+          </p>
+          <h3 class="reviewer-name">Mary Wangari</h3>
+          <p class="reviewer-role">E-commerce Seller</p>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide card">
+          <img src="data/images/person1.jpg" class="person-img" alt="">
+          <p class="review-text">
+            “Excellent tracking, fast delivery and my goods arrived safely. Highly recommended.”
+          </p>
+          <h3 class="reviewer-name">James Otieno</h3>
+          <p class="reviewer-role">Retail Supplier</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right Arrow -->
+    <div class="arrow right-arrow">&#10095;</div>
+
+  </div>
+
+  <div class="slider-dots"></div>
 </section>
+
+
+
 
 <section class="faq-section">
     <h2>FAQs</h2>
@@ -992,20 +1177,20 @@
      <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <h2 class="footer-logo">SAFEGATE CARGO DXB</h2>
+      <h2 class="footer-logo">MWALIMU FOOTWEAR</h2>
       <h3>Contact Details</h3>
-      <p>Nairobi, Kenya,<br>safegatedxb@gmail.com</p>
-      <p>Phone: <a href="tel:0705044066">+254 705044066</a></p>
+      <p>Nairobi, Kenya,<br>Official email: mail.mwalimufootwear.co.ke</p>
+      <p>Phone: <a href="tel:0728214134">+254 728214134</a></p>
       <div class="footer-links">
-        <a href="#">Safety</a> |
-        <a href="#">Speed</a> |
-        <a href="#">Trust</a>
+        <a href="#">Smart Sneakers</a> |
+        <a href="#">Official Boots</a> |
+        <a href="#">Fast Delivery</a>
       </div>
-      <h4>Welcome to  Safegate DXB the <u>BEST </u>near you </h4>
+      <h4>We do fast deliveries and accept payment after delivery</h4>
       <div class="social-icons">
         <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="https://wa.me/254 705044066" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/254 728214134" target="_blank"><i class="fab fa-whatsapp"></i></a>
         <a href="about.html">ℹ️ </a>
       </div>
     </div>
@@ -1058,8 +1243,52 @@ document.addEventListener("click", function (event) {
     setInterval(run, 5000);
 })();
 
+
 /* ============================================================
-   3. FAQs
+   3.REVIEWS
+   ============================================================ */
+let current = 0;
+
+const track = document.querySelector(".slider-track");
+const slides = document.querySelectorAll(".slide");
+const totalSlides = slides.length;
+
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
+
+const dotsContainer = document.querySelector(".slider-dots");
+
+// Create dots
+slides.forEach((_, i) => {
+  let dot = document.createElement("span");
+  if (i === 0) dot.classList.add("active");
+  dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll(".slider-dots span");
+
+function showSlide(index) {
+  track.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+function nextSlide() {
+  current = (current + 1) % totalSlides;
+  showSlide(current);
+}
+
+function prevSlide() {
+  current = (current - 1 + totalSlides) % totalSlides;
+  showSlide(current);
+}
+
+rightArrow.onclick = nextSlide;
+leftArrow.onclick = prevSlide;
+
+setInterval(nextSlide, 3500);
+/*=============================================================
+   4. FAQs
    ============================================================ */
 document.querySelectorAll(".faq-question").forEach(q => {
     q.addEventListener("click", () => {
@@ -1080,6 +1309,4 @@ document.querySelectorAll(".faq-question").forEach(q => {
   
 </body>
 </html>
-
-
 
