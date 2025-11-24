@@ -111,10 +111,11 @@
     background-image: url("data/images/pers.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.55;
-    z-index: 1;
-  }
+    opacity: 0.15;
 
+    z-index: -1;          /* puts background behind everything */
+    pointer-events: none; /* makes it unclickable */
+}
   /* CONTENT ABOVE BACKGROUND */
   .service-content {
     position: relative;
@@ -178,11 +179,42 @@
     font-size: 15px;
     line-height: 1.5;
   }
+  /* Footer */
+    footer {
+      background: #004a8f;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      margin-top: 0px;
+    }
+    .footer p, .footer h2, .footer h3, .footer h4 {
+      color: #ddd;
+      margin: 5px 0;
+    }
+    .footer a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 1.5em;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #00bfff;
+    }
+
 </style>
 
 </head>
 <body>
      <div class="top-bar">
+     <div class="service-backimg"></div>
     <button id="menuToggle" class="menu-btn">☰</button>
 
     <div class="site-title">SAFEGATE DXB</div>
@@ -192,7 +224,7 @@
         <a href="about.html">About Us</a>
         <a href="service.html">Our Services</a>
         <a href="contacts.html">Contact</a>
-        <a href="reviews.html">Reviews</a>
+        <a href="review.html">Reviews</a>
         <a href="quotes.html">Ask for a Quote</a>
         <a href="faqs.html">FAQs</a>
     </nav>
@@ -318,6 +350,27 @@ We connect businesses and individuals across the globe with East Africa. Our mai
     </div>
   </div>
 </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <h2 class="footer-logo">SAFEGATE CARGO DXB</h2>
+      <h3>Contact Details</h3>
+      <p>Nairobi, Kenya,<br>Official email: </p>
+      <p>Phone: <a href="tel:0705044066">+254 705044066</a></p>
+      <div class="footer-links">
+        <a href="#">Safety</a> |
+        <a href="#">Speed</a> |
+        <a href="#">Trust</a>
+      </div>
+      <h4>Welcome to Safegate dxb cargo, The best next to you</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/254 7044066" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="about.html">ℹ️ </a>
+      </div>
+    </div>
+  </footer>
 <script>
  const menuBtn = document.getElementById("menuToggle");
 const menu = document.getElementById("dropdownMenu");
