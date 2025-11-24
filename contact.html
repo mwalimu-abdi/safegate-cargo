@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us — SAFEGATE DXB</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    /* Top bar stays the same */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+   background: #004a8f;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    height: 85px;
+}
+
+
+/* Title styling */
+.site-title {
+    flex: 1;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+}
+
+
+/* MENU BUTTON ANIMATION */
+.menu-btn {
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* When active, rotate */
+.menu-btn.active {
+    transform: rotate(90deg);
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+    position: absolute;
+    top: 55px;
+    left: 10px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 180px;
+
+    /* Animation */
+    max-height: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Show menu */
+.dropdown-menu.open {
+    max-height: 500px; /* tall enough for all links */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Menu items */
+.dropdown-menu a {
+    padding: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #004a8f;
+    background: white;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu a:hover {
+    background: #004a8f;
+    color: white;
+}
+
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("data/images/pers.jpg") no-repeat center/cover;
+    height: 100vh;
+ }
+
+ /* Glass card background */
+ .contact-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    box-sizing: border-box;
+     padding: 100px 20px 50px 20px; /* Add extra top padding */
+ }
+
+ .contact-card {
+    max-width: 420px;
+    margin: 70px auto 0 auto;
+    background: rgba(255,255,255,0.15);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 28px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+ }
+
+ .contact-card h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+ }
+
+ .contact-item {
+    margin: 25px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+ }
+
+ .contact-item i {
+    font-size: 24px;
+    color: #00d4ff;
+ }
+
+ .contact-card a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-size: 18px;
+ }
+
+ /* WhatsApp button */
+ .wa-btn {
+    display: block;
+    margin-top: 30px;
+    padding: 14px;
+    background: #25D366;
+    color: white;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+ }
+
+ .wa-btn:hover {
+    background: #1ebe5d;
+ }
+
+ @media (max-width: 480px) {
+    .contact-card {
+        margin-top: 90px;
+        padding: 25px;
+    }
+    .contact-item {
+        font-size: 16px;
+    }
+ }
+   /* Footer */
+    footer {
+      background: #004a8f;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      margin-top: 0px;
+    }
+    .footer p, .footer h2, .footer h3, .footer h4 {
+      color: #ddd;
+      margin: 5px 0;
+    }
+    .footer a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 1.5em;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #00bfff;
+    }
+</style>
+</head>
+
+<body>
+     <div class="top-bar">
+    <button id="menuToggle" class="menu-btn">☰</button>
+
+    <div class="site-title">SAFEGATE DXB</div>
+
+    <nav class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="service.html">Our Services</a>
+        <a href="contacts.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="quotes.html">Ask for a Quote</a>
+        <a href="faqs.html">FAQs</a>
+    </nav>
+</div>
+
+<div class="contact-wrapper">
+    <div class="contact-card">
+        <h1>Contact Us</h1>
+
+        <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:070544066">070544066</a>
+        </div>
+
+        <div class="contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <a href="https://wa.me/25470504066" target="_blank">0705044066</a>
+        </div>
+
+        <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:safegatedxb@gmail.com">safegatedxb@gmail.com</a>
+        </div>
+
+        <a class="wa-btn" href="https://wa.me/25470504066" target="_blank">
+            Message Us on WhatsApp
+        </a>
+    </div>
+</div>
+ <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <h2 class="footer-logo">SAFEGATE CARGO DXB</h2>
+      <h3>Contact Details</h3>
+      <p>Nairobi, Kenya,<br>Official email: </p>
+      <p>Phone: <a href="tel:0705044066">+254 705044066</a></p>
+      <div class="footer-links">
+        <a href="#">Safety</a> |
+        <a href="#">Speed</a> |
+        <a href="#">Trust</a>
+      </div>
+      <h4>Welcome to Safegate dxb cargo, The best next to you</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/254 7044066" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="about.html">ℹ️ </a>
+      </div>
+    </div>
+  </footer>
+<script>
+ const menuBtn = document.getElementById("menuToggle");
+const menu = document.getElementById("dropdownMenu");
+
+menuBtn.addEventListener("click", function (event) {
+    event.stopPropagation(); // prevent closing immediately
+
+    menu.classList.toggle("open");
+    menuBtn.classList.toggle("active");
+
+    // Change button text
+    menuBtn.textContent = menu.classList.contains("open") ? "✕" : "☰";
+});
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+document.addEventListener("click", function (event) {
+    if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+        menu.classList.remove("open");
+        menuBtn.classList.remove("active");
+        menuBtn.textContent = "☰";
+    }
+});
+
+</script>
+
+</body>
+</html>
