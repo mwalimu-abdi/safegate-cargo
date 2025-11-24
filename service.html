@@ -116,6 +116,23 @@
     z-index: -1;          /* puts background behind everything */
     pointer-events: none; /* makes it unclickable */
 }
+
+ /* BACKGROUND IMAGE */
+  .servic-backimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("data/images/pers.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+
+    z-index: -1;          /* puts background behind everything */
+    pointer-events: none; /* makes it unclickable */
+}
+     
   /* CONTENT ABOVE BACKGROUND */
   .service-content {
     position: relative;
@@ -214,6 +231,7 @@
 </head>
 <body>
      <div class="top-bar">
+       <div class="servic-backimg"></div>
      
     <button id="menuToggle" class="menu-btn">☰</button>
 
