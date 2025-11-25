@@ -213,21 +213,27 @@
     }
 
     
+
 .falling-title {
     z-index: 5;
-    margin-top: 200px;
+    margin-top: 180px;
     display: flex;
-    gap: 4px;              /* smaller gap */
-    font-size: 24px;       /* slightly smaller */
-    font-weight: 800;
-    color: white;
+    gap: 6px;                     /* Slight spacing between letters */
+    
+    font-size: 42px;              /* Large, clean title size (like screenshot) */
+    font-weight: 700;             /* Not too heavy — Yassir uses around 600–700 */
+    font-family: 'Poppins', 'Montserrat', 'Nunito Sans', sans-serif;
+
+    color: rgba(255, 255, 255, 0.95);  /* Same white softness as screenshot */
     text-transform: uppercase;
-    letter-spacing: 1px;   /* reduce spacing */
+    letter-spacing: 2px;          /* Wider, clean spacing like Yassir */
     text-align: center;
+
     justify-content: center;
-    flex-wrap: wrap;       /* 🔥 allows letters to wrap instead of going off screen */
-   padding: 100px 20px 50px 20px; /* Add extra top padding */
-}
+    flex-wrap: wrap;
+
+    padding: 110px 20px 60px 20px;
+  }
 
 /* EXTRA clean mobile optimization */
 @media (max-width: 400px) {
@@ -1340,6 +1346,7 @@ faqItems.forEach(item => {
   
 </body>
 <html></html>
+
 
 
 
