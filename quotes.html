@@ -121,7 +121,7 @@
     .container {
       max-width: 800px;
       margin: 50px auto;
-      padding: 100px 20px 30px 20px; /* Add extra top padding */
+      padding: 120px 20px 30px 20px; /* Add extra top padding */
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
@@ -234,7 +234,7 @@
         <a href="about.html">About Us</a>
         <a href="service.html">Our Services</a>
         <a href="contacts.html">Contact</a>
-        <a href="reviews.html">Reviews</a>
+        <a href="review.html">Reviews</a>
         <a href="quotes.html">Ask for a Quote</a>
         <a href="faqs.html">FAQs</a>
     </nav>
@@ -287,17 +287,30 @@
   </footer>
 
 <script>
-  const form = document.getElementById('quoteForm');
-  const successMessage = document.getElementById('successMessage');
+ const menuBtn = document.getElementById("menuToggle");
+const menu = document.getElementById("dropdownMenu");
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    // Simulate form submission
-    successMessage.style.display = 'block';
-    form.reset();
-  });
+menuBtn.addEventListener("click", function (event) {
+    event.stopPropagation(); // prevent closing immediately
+
+    menu.classList.toggle("open");
+    menuBtn.classList.toggle("active");
+
+    // Change button text
+    menuBtn.textContent = menu.classList.contains("open") ? "✕" : "☰";
+});
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+document.addEventListener("click", function (event) {
+    if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+        menu.classList.remove("open");
+        menuBtn.classList.remove("active");
+        menuBtn.textContent = "☰";
+    }
+});
 </script>
 
 </body>
 </html>
+
 
