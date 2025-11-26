@@ -7,7 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     /* Top bar stays the same */
-.top-bar {
+  body {
+  padding-top: 100px; /* prevents all page content from hiding behind top bar */
+}
+
+    .top-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -312,6 +316,7 @@ document.addEventListener("click", function (event) {
 
 </body>
 </html>
+
 
 
 
