@@ -7,6 +7,7 @@
   <title>SAFEGATE DXB — Cargo Services</title>
   <meta name="description" content="SAFEGATE DXB — Air, Sea & Land freight, clearing & forwarding. Request a quote, track shipments, and contact us." />
   <meta name="theme-color" content="#0b3659" />
+   <meta name="google" content="notranslate">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%230b3659%22/></svg>">
 
   <style>
@@ -277,6 +278,7 @@ body {
     display: block;
     border-radius: 100%;
     margin-left: 35px;
+   border-color: #004a8f;
 }
 .top-bar {
   position: fixed;
@@ -1567,48 +1569,79 @@ faqItems.forEach(item => {
 /*=============================================================
    5. TRANSLATION
    ============================================================ */
-document.getElementById("translate-btn").addEventListener("click", function () {
-    let langBox = document.getElementById("lang-box");
+// Close dropdown if open
+let langBoxOpen = null;
 
-    if (langBox) { langBox.remove(); return; }
+document.getElementById("translate-btn").addEventListener("click", function (event) {
 
-    langBox = document.createElement("div");
-    langBox.id = "lang-box";
+    event.stopPropagation(); // stop immediate closing
+
+    // Remove old box if exists
+    if (langBoxOpen) {
+        langBoxOpen.remove();
+        langBoxOpen = null;
+        return;
+    }
+
+    // Create dropdown
+    let langBox = document.createElement("div");
+    langBox.className = "lang-dropdown";
     langBox.style.position = "absolute";
-    langBox.style.right = "20px";
-    langBox.style.top = "65px";
     langBox.style.background = "#fff";
     langBox.style.border = "1px solid #ccc";
+    langBox.style.padding = "6px 10px";
     langBox.style.borderRadius = "6px";
-    langBox.style.padding = "6px";
+    langBox.style.boxShadow = "0 2px 6px rgba(0,0,0,0.15)";
     langBox.style.zIndex = 99999;
 
     langBox.innerHTML = `
-        <div class="lang" data-lang="en">English</div>
-        <div class="lang" data-lang="sw">Swahili</div>
-        <div class="lang" data-lang="ar">Arabic</div>
-        <div class="lang" data-lang="so">Somali</div>
+        <div class="lang-option" data-lang="en">English</div>
+        <div class="lang-option" data-lang="sw">Swahili</div>
+        <div class="lang-option" data-lang="ar">Arabic</div>
+        <div class="lang-option" data-lang="so">Somali</div>
     `;
 
     document.body.appendChild(langBox);
+    langBoxOpen = langBox;
 
-    document.querySelectorAll(".lang").forEach(el => {
-        el.style.padding = "5px 8px";
-        el.style.cursor = "pointer";
+    // Position dropdown under the button
+    const rect = this.getBoundingClientRect();
+    langBox.style.left = rect.left + "px";
+    langBox.style.top = rect.bottom + 5 + "px";
 
-        el.onclick = function () {
+    // Style options
+    document.querySelectorAll(".lang-option").forEach(option => {
+        option.style.padding = "6px 10px";
+        option.style.cursor = "pointer";
+
+        option.onmouseover = () => option.style.background = "#eee";
+        option.onmouseout  = () => option.style.background = "#fff";
+
+        // When user clicks a language
+        option.onclick = function () {
             let lang = this.getAttribute("data-lang");
-            let sel = document.querySelector("select.goog-te-combo");
-            if (sel) {
-                sel.value = lang;
-                sel.dispatchEvent(new Event("change"));
+
+            let select = document.querySelector("select.goog-te-combo");
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event("change"));
             }
-            document.getElementById("translate-btn").innerHTML = lang.toUpperCase();
+
+            document.getElementById("translate-btn").textContent = lang.toUpperCase();
+
             langBox.remove();
+            langBoxOpen = null;
         };
     });
 });
 
+// CLOSE DROPDOWN WHEN TAPPING ANYWHERE OUTSIDE
+document.addEventListener("click", function (event) {
+    if (langBoxOpen && !langBoxOpen.contains(event.target) && event.target.id !== "translate-btn") {
+        langBoxOpen.remove();
+        langBoxOpen = null;
+    }
+});
   </script>
   
 </body>
