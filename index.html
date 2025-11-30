@@ -10,7 +10,244 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%230b3659%22/></svg>">
 
   <style>
+    
+/* Falling title container */
+.falling-title-container {
+    position: relative;
+    width: 100%;
+    margin-top: 110px;         /* distance from top of hero */
+    text-align: center;
+    z-index: 5;
+}
+
+/* Each letter */
+
+
+    .letter {
+      opacity: 2;
+      position: relative;
+      display:inline-block;
+      animation: drop 1.1s forwards ease-out;
+    }
+    
+    
+.falling-title {
+    z-index: 5;
+    margin-top: 200px;
+    display: flex;
+    gap: 4px;              /* smaller gap */
+     font-size: 40px !important;
+    font-weight: 550 !important;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;   /* reduce spacing */
+    text-align: center;
+    justify-content: center;
+    padding: 100px 20px 50px 20px; /* Add extra top padding */
+    flex-wrap: wrap;       /* 🔥 allows letters to wrap instead of going off screen */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* EXTRA clean mobile optimization */
+@media (max-width: 400px) {
+    .falling-title {
+        font-size: 20px;
+        gap: 2px;
+    }
+}
+
+
+
+
+
+
+
+
+/* Hide Google top-frame */
+#google_translate_element,
+.skiptranslate iframe,
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+/* Social icons on hero */
+.hero-socials {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 18px;        /* FIXED: real spacing between icons */
+    z-index: 20;
+     padding-top: 65px;
+}
+
+.hero-socials a {
+    color: #ffffff;
+    font-size: 22px;
+    transition: .3s ease;
+}
+
+.hero-socials a:hover {
+    color: #00e5ff;
+    transform: scale(1.15);
+}
+
+
+/* Translate button */
+#translate-btn {
+    padding: 6px 14px;
+    background: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* HERO TEXT FIXES */
+.falling-title,
+.hero-subtext,
+.hero-pillars {
+    color: #fff !important;
+    text-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
+/* Prevent layout break */
+.hero-header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 90px;   /* ← Adds extra space above hero */
+}
+
+.hero-header .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 130%;
+    object-fit: cover;
+    
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+   
+    z-index: 1;
+}
+
+/* Hero emails and phone */
+.hero-email {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 5;
+    color: white;
+     padding-top: 50px;
+}
+.hero-email a { color:white; }
+
+.hero-contact-line {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    z-index: 5;
+    color: white;
+    font-size: 18px;
+     padding-top: 50px;
+}
+
+/* Phone responsive */
+@media (max-width: 480px) {
+    .main-falling-title {
+        font-size: 28px;
+        margin-top: 80px;
+        gap: 3px;
+    }
+}
+
+/* Individual letter animation */
+.title-letter {
+    opacity: 0;
+    display: inline-block;
+    animation: titleDrop 1.1s ease-out forwards;
+}
+
+@keyframes titleDrop {
+    0% { opacity: 0; transform: translateY(-120px) scale(1.08); }
+    60% { opacity: 1; transform: translateY(8px) scale(1.02); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Subtext */
+.hero-subtext {
+    z-index: 5;
+    margin-top: 20px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.3;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity:0; transform:translateY(25px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+/* Pillars */
+.hero-pillars {
+    margin-top: 12px;
+    z-index: 5;
+    text-align: center;
+    font-size: 20px;
+    opacity: 0;
+    animation: fadeInUp 1.8s forwards;
+}
+
+.hero-pillars .dot {
+    margin: 0 8px;
+    opacity: 0.8;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width:480px){
+    .falling-title { font-size:22px; margin-top:150px; }
+    .hero-subtext { font-size:16px; padding:0 10px; }
+    .hero-pillars { font-size:16px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Top bar stays the same */
+.logo-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* distance between logo & text */
+}
+
+.top-logo {
+    height: 28px;          /* nice size for top bar */
+    width: auto;
+    display: block;
+}
 .top-bar {
   position: fixed;
   top: 0;
@@ -131,32 +368,7 @@
     text-overflow: ellipsis; /* show ... if too long */
 }
 
-    .hero-email {
-    position: absolute;
-    top: 25px;             /* adjust to fine-tune placement */
-    left: 40px;            /* adjust to move left/right */
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 18px;
-    font-weight: 500;
-    color: #ffffff;
-    z-index: 10;           /* ensures it stays above the falling letters */
-}
-
-.hero-email i {
-    font-size: 20px;
-    color: #ffffff;
-}
-
-.hero-email a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.hero-email a:hover {
-    text-decoration: underline;
-}
+  
 
 .hero-contact-line {
     position: absolute;
@@ -268,13 +480,7 @@
        kept as full-screen below header
        ================================ */
 
-    .hero-header {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    font-size: 22px !important;   /* adjust as you like */
-}
+   
 .hero-subtext {
     z-index: 5;
     margin-top: 20px;
@@ -301,21 +507,8 @@
 }
 
 
-.hero-header .hero-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 135%;
-    object-fit: cover;
-    z-index: 0;
-}
 
-.overlay {
-    position: absolute;
-    inset: 0;
-   background: rgba(0, 123, 255, 0.5);   /* DARKER so text becomes bright white */
-    z-index: 1;
-}
+
 
 .floating-whatsapp {
     position: fixed;
@@ -340,23 +533,7 @@
     transform: scale(1.1);
     box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
-    .hero-pillars {
-    margin-top: 15px;
-    font-size: 22px !important;   /* adjust as you like */
-    font-weight: 400;
-    color: #e5e5e5;
-    text-align: center;
-    letter-spacing: 2px;
-    opacity: 0;
-    animation: fadeInUp 1.8s ease forwards;
-}
-
-.hero-pillars .dot {
-    margin: 0 8px;
-    font-weight: 700;
-    opacity: 0.8;
-}
-
+   
 
 .hero-nav {
     position: relative;
@@ -477,22 +654,7 @@
       .falling-title { font-size:40px; margin-top:50px; letter-spacing:2px; }
     }
 
-    /* === Rest of your original page styling (kept mostly intact) === */
-    .hero{
-      background:linear-gradient(90deg, rgba(11,54,89,0.04), rgba(255,255,255,0));
-      border-radius:18px;padding:28px;margin-bottom:28px;
-      display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;
-    }
-    .hero .eyebrow{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--primary);font-weight:600}
-    .hero h2{margin:10px 0 12px;font-size:28px;color:var(--primary)}
-    .hero p{margin:0 0 18px;color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;font-weight:700;border:0;cursor:pointer;box-shadow:0 6px 18px rgba(11,54,89,0.06);}
-    .btn.primary{background:var(--primary);color:white}
-    .btn.ghost{background:transparent;border:1px solid rgba(11,54,89,0.06)}
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
-    .service{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(11,54,89,0.04);transition:transform .18s ease, box-shadow .18s ease;}
-    .service:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,54,89,0.08)}
-    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-bottom:40px}
+  
 
    
    /* === SERVICE SECTIOM === */
@@ -826,7 +988,10 @@ ice-card:hover {
  <div class="top-bar">
     <button id="menuToggle" class="menu-btn">☰</button>
 
-    <div class="site-title">SAFEGATE DXB</div>
+    <div class="logo-title-wrap">
+        <img src="data/images/logo.png" class="top-logo" alt="SG Logo">
+        <div class="site-title">SAFEGATE DXB</div>
+    </div>
 
     <nav class="dropdown-menu" id="dropdownMenu">
         <a href="index.html">Home</a>
@@ -839,35 +1004,51 @@ ice-card:hover {
     </nav>
 </div>
 
+
 <!-- ======= MY EXISTING HERO (kept as full-screen below header) ======= -->
   <header class="hero-header">
+    
     <img src="data/images/img1.jpg" class="hero-bg" alt="">
     <div class="overlay"></div>
 
+    <!-- Email + Phone -->
     <div class="hero-email">
-    <i class="fa fa-envelope"></i>
-    <a href="mailto:safegatedxb@gmail.com">safegatedxb@gmail.com</a>
-</div>
-<div class="hero-contact-line">
-    <span class="hero-phone-icon">📞</span>
-    <span class="hero-phone-text">Call Us: <strong>0705 044 066</strong></span>
-</div>
+        <i class="fa fa-envelope"></i>
+        <a href="mailto:safegatedxb@gmail.com">safegatedxb@gmail.com</a>
+    </div>
+
+    <div class="hero-contact-line">
+        📞 Call Us: <strong>0705 044 066</strong>
+    </div>
+
+    <!-- Falling Hero Title -->
+    <!-- FALLING MAIN TITLE -->
+<div id="fallTitle" class="falling-title"></div>
 
 
-    <div id="fallTitle" class="falling-title"></div>
-   <div class="hero-subtext">
-    Delivering cargo safely, swiftly, and across boarders —
-    your trusted logistics partner.
-</div>
-<div class="hero-pillars">
-    <span class="boll">Safety</span>
-    <span class="dot">•</span>
-    <span class="bbd">Speed</span>
-    <span class="dot">•</span>
-    <span class="bbd">Trust</span>
-</div>
+    <!-- Subtext -->
+    <div class="hero-subtext">
+        Delivering cargo safely, swiftly, and across borders —
+        your trusted logistics partner.
+    </div>
 
+    <!-- Pillars -->
+    <div class="hero-pillars">
+        Safety <span class="dot">•</span> Speed <span class="dot">•</span> Trust
+    </div>
 
+    <!-- Social Icons + Translate -->
+    <div class="hero-socials">
+        <a href="https://wa.me/254705044066" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:safegatedxb@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+
+        <button id="translate-btn">EN</button>
+    </div>
+
+    <div id="google_translate_element" style="display:none;"></div>
 
 </header>
 <a href="https://wa.me/254705044066" class="floating-whatsapp" target="_blank" aria-label="WhatsApp Chat">
@@ -1336,6 +1517,50 @@ faqItems.forEach(item => {
       rightArrow.style.transform = 'rotate(90deg)';
     }
   });
+});
+/*=============================================================
+   5. TRANSLATION
+   ============================================================ */
+document.getElementById("translate-btn").addEventListener("click", function () {
+    let langBox = document.getElementById("lang-box");
+
+    if (langBox) { langBox.remove(); return; }
+
+    langBox = document.createElement("div");
+    langBox.id = "lang-box";
+    langBox.style.position = "absolute";
+    langBox.style.right = "20px";
+    langBox.style.top = "65px";
+    langBox.style.background = "#fff";
+    langBox.style.border = "1px solid #ccc";
+    langBox.style.borderRadius = "6px";
+    langBox.style.padding = "6px";
+    langBox.style.zIndex = 99999;
+
+    langBox.innerHTML = `
+        <div class="lang" data-lang="en">English</div>
+        <div class="lang" data-lang="sw">Swahili</div>
+        <div class="lang" data-lang="ar">Arabic</div>
+        <div class="lang" data-lang="so">Somali</div>
+    `;
+
+    document.body.appendChild(langBox);
+
+    document.querySelectorAll(".lang").forEach(el => {
+        el.style.padding = "5px 8px";
+        el.style.cursor = "pointer";
+
+        el.onclick = function () {
+            let lang = this.getAttribute("data-lang");
+            let sel = document.querySelector("select.goog-te-combo");
+            if (sel) {
+                sel.value = lang;
+                sel.dispatchEvent(new Event("change"));
+            }
+            document.getElementById("translate-btn").innerHTML = lang.toUpperCase();
+            langBox.remove();
+        };
+    });
 });
 
   </script>
