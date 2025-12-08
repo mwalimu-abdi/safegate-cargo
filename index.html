@@ -674,6 +674,11 @@ body {
 
    
    /* === SERVICE SECTIOM === */
+   .services-checklist .service-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
    
 .services-checklist {
   display: grid;
@@ -688,16 +693,50 @@ body {
   padding: 6px 6px;
   border-radius: 10px;
   height: 60px;
+  width: 100%auto;
 
   /* KEEP your normal background here */
   background: rgba(14, 221, 125, 0.75); 
   backdrop-filter: blur(2px);
 }
+.check-wrapper {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background: #ffffff;              /* outer white ring */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 14px;
+}
+
+.check-inner {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #00A859;             /* inner green circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+}
 
 .check-icon {
-  font-size: 22px;
-  font-weight: bold;
-  color: #00ff99;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  background-color: #00A859;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 14px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
 }
 
 
@@ -709,12 +748,10 @@ body {
 }
 
 .service-item p {
-  margin: 0px 0 0;
+  margin: 5px 0 0;
   color: #e8e8e8;
   font-size: 15px;
   padding-top: 0%;
-   width: 100%;
-  
 }
 ice-card:hover {
     transform: translateY(-6px);
@@ -1137,148 +1174,119 @@ ice-card:hover {
       across multiple destinations.
     </p>
 
-    <div class="services-checklist" style="margin-top: 30px;">
+   <div class="services-checklist" style="margin-top: 30px;">
 
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Vehicle Transport</h4>
-          <p>Fast and safe transport for all vehicle types.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Livestock Transport</h4>
-          <p>Secure and humane transport for all livestock.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Fragile Cargo</h4>
-          <p>Extra care for delicate and breakable items.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Construction Material Hauling</h4>
-          <p>Quick delivery of all construction materials.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Medical Equipments</h4>
-          <p>Safe and timely transport of medical devices.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Pharmaceutical Transport</h4>
-          <p>Temperature-controlled delivery for medicines.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Household Goods Moving</h4>
-          <p>Smooth and safe moving for all household items.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Event Logistics</h4>
-          <p>Complete support for events and exhibitions.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Express Cargo</h4>
-          <p>Fast delivery for urgent shipments.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Waste Transport</h4>
-          <p>Safe transport of industrial and household waste.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Machine Transport</h4>
-          <p>Secure hauling for heavy machinery.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Electronic Transport</h4>
-          <p>Careful delivery of electronic devices.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Paper & Lumber Transport</h4>
-          <p>Efficient delivery of paper and lumber goods.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Container Trucking</h4>
-          <p>Reliable transport for all container loads.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Agricultural Produce Transport</h4>
-          <p>Fresh and timely delivery of farm produce.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Retail Distributions</h4>
-          <p>Fast delivery solutions for retail stores.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <span class="check-icon">✔</span>
-        <div>
-          <h4>Food & Beverage Transport</h4>
-          <p>Clean, safe, temperature-controlled food transport.</p>
-        </div>
-      </div>
-
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Fragile Cargo</h4>
+      <p>Extra care for delicate and breakable items.</p>
     </div>
-
   </div>
 
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Construction Material Hauling</h4>
+      <p>Quick delivery of all construction materials.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Medical Equipments</h4>
+      <p>Safe and timely transport of medical devices.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Household Goods Moving</h4>
+      <p>Smooth and safe moving for all household items.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Event Logistics</h4>
+      <p>Complete support for events and exhibitions.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Express Cargo</h4>
+      <p>Fast delivery for urgent shipments.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Machine Transport</h4>
+      <p>Secure hauling for heavy machinery.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Electronic Transport</h4>
+      <p>Careful delivery of electronic devices.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Paper & Lumber Transport</h4>
+      <p>Efficient delivery of paper and lumber goods.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Container Trucking</h4>
+      <p>Reliable transport for all container loads.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Retail Distributions</h4>
+      <p>Fast delivery solutions for retail stores.</p>
+    </div>
+  </div>
+
+</div>
 </section>
 
 
@@ -1667,5 +1675,3 @@ document.addEventListener("click", function (event) {
   
 </body>
 <html></html>
-
-
