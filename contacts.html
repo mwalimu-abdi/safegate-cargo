@@ -281,38 +281,9 @@ header p {
           <p class="value">+971 4 328 0650</p>
         </div>
       </div>
-      <div class="contact-card">
-        <i class="fas fa-user"></i>
-        <div>
-          <p class="label">Bashir</p>
-          <p class="value">+971 55 5042404</p>
-        </div>
-      </div>
-      <div class="contact-card">
-        <i class="fas fa-user"></i>
-        <div>
-          <p class="label">Abdi Rahman</p>
-          <p class="value">+971 52 7056622</p>
-        </div>
-      </div>
-      <div class="contact-card">
-        <i class="fas fa-user"></i>
-        <div>
-          <p class="label">Abdullahi</p>
-          <p class="value">+971 55 2094869</p>
-        </div>
-      </div>
-      <div class="contact-card">
-        <i class="fas fa-user"></i>
-        <div>
-          <p class="label">David Njogu</p>
-          <p class="value">+971 56 280 5153</p>
-        </div>
-      </div>
-      <div class="contact-card">
-        <i class="fas fa-warehouse"></i>
-        <div>
-          <p class="label">Warehouse</p>
+      
+      <div class="contact-card">    
+      <p class="label">Warehouse</p>
           <p class="value">+971 55 8931073</p>
         </div>
       </div>
@@ -435,9 +406,17 @@ menuBtn.addEventListener("click", function (event) {
     // Change button text
     menuBtn.textContent = menu.classList.contains("open") ? "✕" : "☰";
 });
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+document.addEventListener("click", function (event) {
+    if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+        menu.classList.remove("open");
+        menuBtn.classList.remove("active");
+        menuBtn.textContent = "☰";
+    }
+});
 </script>
 </body>
 </html>
 
  
-
