@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - SAFEGATE DXB CARGO</title>
-
-  <!-- Modern Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <title>Contact Us — Pamoja Cargo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
   <style>
     
+    /* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
 /* Top bar stays the same */
 .top-bar {
   position: fixed;
@@ -94,93 +101,90 @@
     background: #004a8f;
     color: white;
 }
+body {
+  background: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f4f7fb;
-      color: #333;
-    }
+/* Background Image Section */
+.hero {
+  width: 100%;
+  height: 300px;
+  background: url("data/images/img2.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+}
 
-    /* Background Image Section */
-    .hero {
-      width: 100%;
-      height: 300px;
-      background: url("data/images/img2.jpg") center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
-    }
+.hero h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin: 0;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      font-weight: 600;
-      margin: 0;
-    }
+/* Main About Section */
+.about-section {
+  max-width: 1200px;
+  margin: -80px auto 50px;
+  padding: 0 20px;
+}
 
-    /* Main About Section */
-    .about-section {
-      max-width: 1200px;
-      margin: -80px auto 50px;
-      padding: 0 20px;
-    }
+.intro-text {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+  text-align: center;
+  line-height: 1.7;
+}
 
-    .intro-text {
-      background: white;
-      padding: 25px 30px;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      margin-bottom: 40px;
-      text-align: center;
-      line-height: 1.7;
-    }
+/* Cards Layout */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
 
-    /* Cards Layout */
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: 0.3s;
+  border-color: #1a1a1a;
+  border-style: solid;
+}
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
-      text-align: center;
-      transition: 0.3s;
-      border-color: #1a1a1a;
-      border-style: solid;
-    }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
 
+.icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 12px;
+  color: #0A66C2;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    }
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
 
-    .icon {
-      font-size: 48px;
-      display: block;
-      margin-bottom: 12px;
-      color: #0A66C2;
-    }
-
-    .card h3 {
-      font-size: 20px;
-      margin-bottom: 12px;
-      color: #1a1a1a;
-      font-weight: 600;
-    }
-
-    .card p {
-      font-size: 15px;
-      line-height: 1.65;
-      color: #555;
-    }
-     /* Footer */
+.card p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #555;
+}
+/* Footer */
     footer {
       background: #004a8f;
       color: white;
@@ -210,35 +214,20 @@
       color: #00bfff;
     }
 
-    .service-backimg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url("data/images/pers.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.15;
-
-    z-index: -1;          /* puts background behind everything */
-    pointer-events: none; /* makes it unclickable */
-}
 
   </style>
-</head>
-<body>
-  <div class="top-bar">
+  <body>
+<div class="top-bar">
     <button id="menuToggle" class="menu-btn">☰</button>
 
-    <div class="site-title">SAFEGATE DXB</div>
+    <div class="site-title">Pamoja Cargo</div>
 
     <nav class="dropdown-menu" id="dropdownMenu">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="service.html">Our Services</a>
         <a href="contacts.html">Contact</a>
-        <a href="review.html">Reviews</a>
+        <a href="reviews.html">Reviews</a>
         <a href="quotes.html">Ask for a Quote</a>
         <a href="faqs.html">FAQs</a>
     </nav>
@@ -255,8 +244,8 @@
 
     <!-- Intro Text -->
     <div class="intro-text">
-      SAFEGATE DXB CARGO is a global logistics company based in Dubai, specializing in 
-      transportation of cargo goods from Turkey, Dubai, China, India, USA, Thailand, KSA, and Canada.
+      Pamoja Cargo is a global logistics company specializing in cargo transportation 
+      from Turkey, Dubai, China, India, USA, Thailand, KSA, and Canada.
       We deliver safely and efficiently to Kenya, Uganda, Tanzania, and Somalia.  
       Our mission is to simplify international shipping with trust, speed, and professionalism.
     </div>
@@ -268,8 +257,8 @@
         <span class="icon">👥</span>
         <h3>Customer Satisfaction</h3>
         <p>
-          We believe in providing a smooth and transparent experience for all our clients.  
-          Your trust and happiness are at the center of everything we do at SAFEGATE DXB CARGO.
+          We believe in delivering a smooth and transparent experience.  
+          Your trust and happiness are at the center of everything we do at Pamoja Cargo.
         </p>
       </div>
 
@@ -277,8 +266,8 @@
         <span class="icon">⏱️</span>
         <h3>Fast & Timely Delivery</h3>
         <p>
-          We ensure your cargo arrives on time, every time. Our reliable routes and  
-          tracking systems guarantee fast, safe, and efficient delivery to East Africa.
+          We ensure your cargo arrives on time, every time. Our secure routes and  
+          tracking systems guarantee fast and efficient delivery across East Africa.
         </p>
       </div>
 
@@ -286,8 +275,8 @@
         <span class="icon">📦</span>
         <h3>Wide Cargo Services</h3>
         <p>
-          From electronics, fashion items, machinery, and home goods,  
-          to consolidated shipments — we offer complete cargo solutions tailored to your needs.
+          From electronics, fashion, machinery, and home goods  
+          to consolidated shipments — we offer complete cargo solutions tailored for you.
         </p>
       </div>
 
@@ -295,34 +284,69 @@
         <span class="icon">⭐</span>
         <h3>Quality & Professionalism</h3>
         <p>
-          Our experienced team in Dubai and across partner countries  
-          ensures your shipments are handled with the highest level of care and expertise.
+          Our experienced team ensures your shipments are handled  
+          with the highest level of care, accuracy, and professionalism.
         </p>
       </div>
 
     </div>
   </div>
-     <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <h2 class="footer-logo">SAFEGATE CARGO DXB</h2>
-      <h3>Contact Details</h3>
-      <p>Nairobi, Kenya,<br>Official email: </p>
-      <p>Phone: <a href="tel:0705044066">+254 705044066</a></p>
-      <div class="footer-links">
-        <a href="#">Safety</a> |
-        <a href="#">Speed</a> |
-        <a href="#">Trust</a>
-      </div>
-      <h4>Welcome to Safegate dxb cargo, The best next to you</h4>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="https://wa.me/254 7044066" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="about.html">ℹ️ </a>
-      </div>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <h2 class="footer-logo">PAMOJA CARGO EXPRESS</h2>
+
+    <h3>Contact Details</h3>
+
+    <!-- Dubai Office -->
+    <p><strong>Dubai Office</strong><br>
+      Al Thani Building, First Floor, Office No. 101<br>
+      Sabkha Road, Deira, Dubai – U.A.E<br>
+      Office Tel: <a href="tel:+97143280650">+971 4 328 0650</a><br>
+      Bashir: <a href="tel:+971555042404">+971 55 504 2404</a><br>
+      Abdi Rahman: <a href="tel:+971527056622">+971 52 705 6622</a><br>
+      Abdullahi: <a href="tel:+971552094869">+971 55 209 4869</a><br>
+      David Njogu: <a href="tel:+971562805153">+971 56 280 5153</a>
+    </p>
+
+    <!-- Warehouse -->
+    <p><strong>Dubai Warehouse</strong><br>
+      Mamzar, Gate No. 7A<br>
+      Warehouse Contact: <a href="tel:+971558931073">+971 55 893 1073</a>
+    </p>
+
+    <!-- Nairobi Office -->
+    <p><strong>Nairobi Office</strong><br>
+      <a href="tel:+254720220134">+254 720 220 134</a><br>
+      <a href="tel:+254720010388">+254 720 010 388</a>
+    </p>
+
+    <!-- Mombasa Office -->
+    <p><strong>Mombasa Office</strong><br>
+      Hamed: <a href="tel:+254725406665">+254 725 406 665</a><br>
+      Ahmed: <a href="tel:+254724745191">+254 724 745 191</a>
+    </p>
+
+    <!-- Email -->
+    <p><strong>Email:</strong> pamojacargo@gmail.com</p>
+
+    <div class="footer-links">
+      <a href="#">Safety</a> |
+      <a href="#">Speed</a> |
+      <a href="#">Trust</a>
     </div>
-  </footer>
+
+    <h4>Welcome to Pamoja Cargo Express — Always by Your Side</h4>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/971558931073" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="about.html">ℹ️</a>
+    </div>
+  </div>
+</footer>
+
 <script>
    const menuBtn = document.getElementById("menuToggle");
 const menu = document.getElementById("dropdownMenu");
@@ -336,7 +360,16 @@ menuBtn.addEventListener("click", function (event) {
     // Change button text
     menuBtn.textContent = menu.classList.contains("open") ? "✕" : "☰";
 });
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+document.addEventListener("click", function (event) {
+    if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+        menu.classList.remove("open");
+        menuBtn.classList.remove("active");
+        menuBtn.textContent = "☰";
+    }
+});
+    
 </script>
 </body>
 </html>
-
