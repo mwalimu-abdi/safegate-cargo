@@ -589,6 +589,16 @@ menuBtn.addEventListener("click", function (event) {
     // Change button text
     menuBtn.textContent = menu.classList.contains("open") ? "✕" : "☰";
 });
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+document.addEventListener("click", function (event) {
+    if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+        menu.classList.remove("open");
+        menuBtn.classList.remove("active");
+        menuBtn.textContent = "☰";
+    }
+});
+
 /*=============================================================
    4. FAQs
    ============================================================ */
