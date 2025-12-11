@@ -30,12 +30,13 @@
 /* MENU HEADER */
 .menu-header {
     font-size: 22px;
-    font-weight: 700;       /* heavier font */
-    text-align: center;     /* centered at top */
-    padding: 20px 0 10px;
+    font-weight: 700;
+    text-align: center;
+    padding: 25px 0 15px;   /* more space above items */
     background: white;
     border-bottom: 1px solid #eee;
 }
+
 
 
 .dropdown-menu a {
@@ -68,6 +69,19 @@
    border-color: #004a8f;
    
 }
+.menu-links a {
+    padding: 10px 20px;       /* closer together */
+    display: block;
+    font-size: 16px;
+    color: #004a8f;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-links a:hover {
+    background: #004a8f;
+    color: white;
+}
 .top-bar {
   position: fixed;
   top: 0;
@@ -80,7 +94,14 @@
     align-items: center;
     height: 85px;
 }
-
+.menu-footer {
+    margin-top: auto;         /* pushes to very bottom */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 15px;
+    color: #004a8f;
+    border-top: 1px solid #eee;
+}
 
 /* Title styling */
 .site {
@@ -409,8 +430,11 @@
 
     <div class="site-title">SAFEGATE DXB</div>
 
-   <nav class="dropdown-menu" id="dropdownMenu">
-         <div class="menu-header">Menu</div>
+  <nav class="dropdown-menu" id="dropdownMenu">
+
+    <div class="menu-header">Menu</div>
+
+    <div class="menu-links">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="service.html">Our Services</a>
@@ -418,7 +442,10 @@
         <a href="review.html">Reviews</a>
         <a href="quotes.html">Ask for a Quote</a>
         <a href="faqs.html">FAQs</a>
-    </nav>
+    </div>
+
+    <div class="menu-footer"><p>Welcome to our website!</p></div>
+
 </div>
 
 <section id="safegate-faqs">
