@@ -10,23 +10,6 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%230b3659%22/></svg>">
 
   <style>
-
-.dropdown-menu {
-    top: 0 !important;
-}
-nav.dropdown-menu {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none;
-}
-
-
-
-
-
-
-
-    
 /* Dropdown Menu Styling */
 .dropdown-menu {
     position: fixed;
@@ -45,15 +28,25 @@ nav.dropdown-menu {
     z-index: 9999;
 }
 /* MENU HEADER */
+/* Remove default spacing from nav and body */
+body, nav.dropdown-menu {
+    margin: 0;
+    padding: 0;
+}
 .menu-header {
     font-size: 22px;
     font-weight: 700;
     text-align: center;
-    padding: 25px 0 15px;   /* more space above items */
+   padding: 25px 0 15px;   /* more space above items */
     background: white;
     border-bottom: 1px solid #eee;
+    margin-top: 0;
 }
-
+/* Remove default spacing from nav and body */
+body, nav.dropdown-menu {
+    margin: 0;
+    padding: 0;
+}
 
 
 .dropdown-menu a {
@@ -182,6 +175,7 @@ nav.dropdown-menu {
     background: #004a8f;
     color: white;
 }
+
 
 
 #safegate-faqs {
