@@ -253,7 +253,6 @@ body {
 }
 
 
-
 /* Dropdown Menu Styling */
 .dropdown-menu {
     position: fixed;
@@ -309,24 +308,13 @@ body, nav.dropdown-menu {
     width: 0%;  
 }
 
-
-/* Top bar stays the same */
-.logo-title-wrap {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* distance between logo & text */
+.top-logo-small {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    margin-left: 12px;   /* spacing between menu and logo */
 }
 
-.top-logo {
-    height: 85px;          /* nice size for top bar */
-    width: 1500px;
-    display: block;
-    border-radius: 0%;
-    margin-left: 3px;
-    margin-right: 0px;
-   border-color: #004a8f;
-   
-}
 .menu-links a {
     padding: 10px 20px;       /* closer together */
     display: block;
@@ -342,17 +330,21 @@ body, nav.dropdown-menu {
     color: white;
 }
 .top-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9999;
-   background: #034e93;
-    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    padding: 0 20px;
+    background: white;
     display: flex;
     align-items: center;
-    height: 85px;
+    justify-content: space-between;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
+
+
 .menu-footer {
     margin-top: 95px;         /* pushes to very bottom */
     text-align: center;
@@ -371,15 +363,34 @@ body, nav.dropdown-menu {
     overflow: hidden;       /* prevent overflow */
     text-overflow: ellipsis; /* show ... if too long */
 }
+.site-title {
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: lowercase;
+    letter-spacing: -1px;
+    margin-left: 15px; 
+    margin-right: auto; /* pushes to center */
+    background: linear-gradient(90deg, #ff007c, #6a00ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+}
+
+.right-empty {
+    width: 32px; /* same width as menu button */
+}
 
 /* MENU BUTTON ANIMATION */
 .menu-btn {
     font-size: 28px;
     background: none;
     border: none;
-    color: white;
+    color: black;
     cursor: pointer;
     transition: transform 0.3s ease;
+    width: 32px;
+   height: 32px;
 }
 
 /* When active, rotate */
@@ -426,7 +437,7 @@ body, nav.dropdown-menu {
 }
 
 
-
+/* === ALL ABOVE ARE CLEAN === */
 
 
 
@@ -1059,30 +1070,34 @@ ice-card:hover {
   </style>
   </head>
   <body>
- <div class="top-bar">
+<div class="top-bar">
+    <!-- Left: Menu -->
     <button id="menuToggle" class="menu-btn">☰</button>
 
-    <div class="logo-title-wrap">
-        <img src="data/images/logoh.jpg" class="top-logo" alt="SG Logo">
-    </div>
+    <!-- Logo next to menu -->
+    <img src="data/images/logo.jpg" class="top-logo-small" alt="Pamoja Cargo Logo">
+
+    <!-- Title -->
+    <div class="site-title">Pamoja Cargo</div>
+
+    <!-- Right invisible spacer -->
+    <div class="right-empty"></div>
 
     <nav class="dropdown-menu" id="dropdownMenu">
+        <div class="menu-header">Menu</div>
 
-    <div class="menu-header">Menu</div>
+        <div class="menu-links">
+            <a href="index.html" class="home-link">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="service.html">Our Services</a>
+            <a href="contacts.html">Contact</a>
+            <a href="review.html">Reviews</a>
+            <a href="quotes.html">Ask for a Quote</a>
+            <a href="faqs.html">FAQs</a>
+        </div>
 
-    <div class="menu-links">
-        <a href="index.html" class="home-link">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="service.html">Our Services</a>
-        <a href="contacts.html">Contact</a>
-        <a href="review.html">Reviews</a>
-        <a href="quotes.html">Ask for a Quote</a>
-        <a href="faqs.html">FAQs</a>
-    </div>
-
-    <div class="menu-footer">Delivering with care — Pamoja Cargo.!</div>
-
-</nav>
+        <div class="menu-footer">Delivering with care — Pamoja Cargo.!</div>
+    </nav>
 </div>
 
 
@@ -1781,6 +1796,7 @@ document.addEventListener("click", function (event) {
   
 </body>
 <html></html>
+
 
 
 
