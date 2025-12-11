@@ -393,18 +393,31 @@ body, nav.dropdown-menu {
 </footer>
 
 <script>
-  const form = document.getElementById('quoteForm');
-  const successMessage = document.getElementById('successMessage');
+ const menuBtn = document.getElementById("menuToggle");
+const menu = document.getElementById("dropdownMenu");
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    // Simulate form submission
-    successMessage.style.display = 'block';
-    form.reset();
-  });
+menuBtn.addEventListener("click", function (event) {
+    event.stopPropagation(); // prevent closing immediately
+
+    menu.classList.toggle("open");
+    menuBtn.classList.toggle("active");
+
+    // Change button text
+    menuBtn.textContent = menu.classList.contains("open") ? "✕" : "☰";
+});
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+document.addEventListener("click", function (event) {
+    if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+        menu.classList.remove("open");
+        menuBtn.classList.remove("active");
+        menuBtn.textContent = "☰";
+    }
+});
 </script>
 
 </body>
 </html>
+
 
 
