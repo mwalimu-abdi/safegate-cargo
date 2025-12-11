@@ -254,6 +254,62 @@ body {
 
 
 
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 50%;                        /* Hidden at start */
+    overflow: hidden;
+    background: #111;                /* Change color as needed */
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    transition: width 0.35s ease;    /* Smooth slide from left */
+    z-index: 9999;
+}
+/* MENU HEADER */
+/* Remove default spacing from nav and body */
+body, nav.dropdown-menu {
+    margin: 0;
+    padding: 0;
+}
+.menu-header {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+   padding: 25px 0 15px;   /* more space above items */
+    background: white;
+    border-bottom: 1px solid #eee;
+    margin-top: 0;
+}
+/* Remove default spacing from nav and body */
+body, nav.dropdown-menu {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-links .home-link {
+    background: white;
+    color: purple;
+    font-weight: 600;
+}
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+/* When menu is active */
+.dropdown-menu.active {
+    width: 0%;  
+}
+
+
 /* Top bar stays the same */
 .logo-title-wrap {
     display: flex;
@@ -271,6 +327,20 @@ body {
    border-color: #004a8f;
    
 }
+.menu-links a {
+    padding: 10px 20px;       /* closer together */
+    display: block;
+    font-size: 16px;
+    color: #004a8f;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+
+.menu-links a:hover {
+    background: #004a8f;
+    color: white;
+}
 .top-bar {
   position: fixed;
   top: 0;
@@ -283,7 +353,14 @@ body {
     align-items: center;
     height: 85px;
 }
-
+.menu-footer {
+    margin-top: 95px;         /* pushes to very bottom */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 15px;
+    color: #004a8f;
+    border-top: 1px solid #eee;
+}
 
 /* Title styling */
 .site {
@@ -294,7 +371,6 @@ body {
     overflow: hidden;       /* prevent overflow */
     text-overflow: ellipsis; /* show ... if too long */
 }
-
 
 /* MENU BUTTON ANIMATION */
 .menu-btn {
@@ -311,40 +387,34 @@ body {
     transform: rotate(90deg);
 }
 
-/* DROPDOWN MENU */
+/* NEW LEFT SLIDE DROPDOWN MENU */
 .dropdown-menu {
-    position: absolute;
-    top: 55px;
-    left: 10px;
+    position: fixed;
+    top: 0;               /* No gap at top */
+    left: 0;              /* No gap at left */
+    height: 100vh;        /* Full height */
+    width: 0;             /* Hidden by default */
     background: white;
-    border-radius: 8px;
     overflow: hidden;
-    width: 180px;
-
-    /* Animation */
-    max-height: 0;
-    opacity: 0;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    z-index: 999;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
-    pointer-events: none;
+    z-index: 9999;
+
+    /* Smooth slide animation */
+    transition: width 0.35s ease-in-out;
 }
 
 /* Show menu */
 .dropdown-menu.open {
-    max-height: 500px; /* tall enough for all links */
-    opacity: 1;
-    pointer-events: auto;
+    width: 75%;      /* Adjust to 100% if you want full-screen menu */
 }
 
-/* Menu items */
+/* Menu items (your existing styles kept) */
 .dropdown-menu a {
     padding: 12px;
     text-decoration: none;
     font-size: 16px;
-    color: #004a8f;
+    color: black;
     background: white;
     display: block;
     border-bottom: 1px solid #eee;
@@ -354,12 +424,6 @@ body {
     background: #004a8f;
     color: white;
 }
-
-
-/* === ALL ABOVE ARE CLEAN === */
-
-
-
 
 
 
@@ -1709,5 +1773,6 @@ document.addEventListener("click", function (event) {
   
 </body>
 <html></html>
+
 
 
