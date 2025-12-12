@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <title>SAFEGATE DXB — Cargo Services</title>
+  <title>PAMOJA CARGO Services</title>
   <meta name="description" content="SAFEGATE DXB — Air, Sea & Land freight, clearing & forwarding. Request a quote, track shipments, and contact us." />
   <meta name="theme-color" content="#0b3659" />
    <meta name="google" content="notranslate">
@@ -27,9 +27,10 @@
    .letter {
     opacity: 0;
     display: inline-block;
-    transform: translateY(-120px) scale(1.1);
-    animation: smoothFall 1.2s ease-out forwards;
+    transform: translateY(-250px) scale(1.1); /* start WAY above */
+    animation: smoothFall 1.3s ease-out forwards;
 }
+  
   
 
 
@@ -53,7 +54,7 @@
     letter-spacing: 1px;   /* reduce spacing */
     text-align: center;
     justify-content: center;
-    padding: 100px 20px 50px 20px; /* Add extra top padding */
+    padding: 70px 20px 50px 20px; /* Add extra top padding */
     flex-wrap: wrap;       /* 🔥 allows letters to wrap instead of going off screen */
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
@@ -68,11 +69,11 @@
 @keyframes smoothFall {
     0% {
         opacity: 0;
-        transform: translateY(-120px) scale(1.1);
+        transform: translateY(-250px) scale(1.1); /* unseen start */
     }
-    60% {
+    70% {
         opacity: 1;
-        transform: translateY(8px) scale(1.02);
+        transform: translateY(10px) scale(1.02); /* soft landing overshoot */
     }
     100% {
         opacity: 1;
@@ -83,7 +84,7 @@
 .hero-header {
     position: relative;
     width: 100%;
-    height: 550px;
+    height: 700px;
     overflow: hidden;
     padding-top: 90px;   /* ← Adds extra space above hero */
 }
@@ -1853,6 +1854,7 @@ document.addEventListener("click", function (event) {
   
 </body>
 <html></html>
+
 
 
 
