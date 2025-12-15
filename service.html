@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us — Pamoja Cargo</title>
+  <title>Our service — Pamoja Cargo</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -11,6 +11,92 @@
   <style>
     
    /* Dropdown Menu Styling */
+   /* ===== DESKTOP MENU ===== */
+.desktop-menu {
+  display: none;
+  gap: 24px;
+}
+
+.desktop-menu a {
+  position: relative;
+  padding: 8px 4px;
+  font-weight: 600;
+  color: #0a2540;
+  text-decoration: none;
+  transition: color 0.35s ease;
+}
+
+
+/* ===== MOBILE DEFAULT ===== */
+.menu-btn {
+  display: block;
+}
+
+/* ===== DESKTOP VIEW ===== */
+@media (min-width: 900px) {
+
+  /* show desktop menu */
+  .desktop-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  /* hide hamburger */
+  .menu-btn {
+    display: none;
+  }
+
+  /* hide mobile dropdown completely */
+  .dropdown-menu {
+    display: none !important;
+  }
+}
+/* Top & bottom lines */
+.desktop-menu a::before,
+.desktop-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff007c, #6a00ff);
+  transform: scaleX(0);
+  transition: transform 0.35s ease;
+}
+
+/* Top line */
+.desktop-menu a::before {
+  top: 0;
+  transform-origin: left;
+}
+
+/* Bottom line */
+.desktop-menu a::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+/* Hover effect */
+.desktop-menu a:hover {
+  color: #6a00ff;
+}
+
+.desktop-menu a:hover::before {
+  transform: scaleX(1);
+}
+
+.desktop-menu a:hover::after {
+  transform: scaleX(1);
+}
+/* Each letter */
+
+
+   .letter {
+    opacity: 0;
+    display: inline-block;
+    transform: translateY(-250px) scale(1.1); /* start WAY above */
+    animation: smoothFall 1.3s ease-out forwards;
+}
 .dropdown-menu {
     position: fixed;
     top: 0;
@@ -329,6 +415,36 @@ body, nav.dropdown-menu {
     .social-icons a:hover {
       color: #00bfff;
     }
+    /* ===== SERVICE CARD ORDER BUTTON ===== */
+
+.order-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 22px;
+  background: #004a8f;        /* keeps your site color */
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 
+    background-color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Hover effect */
+.order-btn:hover {
+  background: #ff7a00;        /* attractive action color */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(255, 122, 0, 0.35);
+}
+
+/* Mobile tap safety */
+.order-btn:active {
+  transform: scale(0.96);
+}
+
 
 
   </style>
@@ -367,96 +483,189 @@ body, nav.dropdown-menu {
 
         <div class="menu-footer">Delivering with care — Pamoja Cargo.!</div>
     </nav>
+    <nav class="desktop-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="service.html">Services</a>
+  <a href="contacts.html">Contact</a>
+  <a href="quotes.html">Quote</a>
+</nav>
+</div>
 </div>
 
 <section class="services-section">
 
   <!-- ⭐ BACKGROUND IMAGE TAG ⭐ -->
-  <div class="service-backimg"></div>
+  
 
   <div class="service-content">
     <h2>Our Services</h2>
 
-    <p>At Pamoja Cargo, we specialize in providing fast,
-       reliable, and affordable cargo solutions tailored to meet 
-       the diverse needs of our clients. Whether you are shipping personal items, 
-       commercial goods, or sensitive materials, we ensure every shipment is handled 
-       with care and delivered on time.
+    <p>
+      At Pamoja Cargo, we provide comprehensive logistics and cargo transportation
+      solutions designed to meet the growing demands of individuals, businesses,
+      and organizations across East Africa. Our services are built on reliability,
+      safety, and efficiency, ensuring that every shipment — large or small —
+      reaches its destination in perfect condition and on schedule.
 
-Cargo Destinations & Origin Countries
-We connect businesses and individuals across the globe with East Africa. Our main origin countries include Dubai, China, India, Turkey, USA, Thailand, Canada, and Saudi Arabia. No matter where your goods come from, Pamoja Cargo ensures safe and seamless delivery to major cities in Kenya, Tanzania, Uganda, and Somalia, including Nairobi, Mombasa, Kisumu, Eldoret, Dar es Salaam, Kampala, and Mogadishu.</p>
+      <br><br>
+
+      We handle a wide range of cargo types, including personal belongings,
+      commercial merchandise, industrial materials, and specialized shipments.
+      With a strong international network and experienced logistics professionals,
+      we manage the entire shipping process from origin to final delivery,
+      allowing our clients to focus on their core activities with confidence.
+
+      <br><br>
+
+      <strong>Cargo Destinations & Origin Countries</strong><br>
+      Pamoja Cargo connects global markets to East Africa through well-established
+      shipping routes from major origin countries such as Dubai, China, India,
+      Turkey, the United States, Thailand, Canada, and Saudi Arabia. We ensure
+      smooth and secure delivery to key destinations in Kenya, Tanzania, Uganda,
+      and Somalia — including Nairobi, Mombasa, Kisumu, Eldoret, Dar es Salaam,
+      Kampala, and Mogadishu. No matter where your goods originate, we guarantee
+      seamless handling, customs coordination, and timely delivery.
+    </p>
 
     <div class="services-container">
 
       <div class="service-card">
         <img src="data/images/paper.jpg">
         <h3>Fragile Cargo</h3>
-        <p>Special protection for sensitive and delicate items.</p>
+        <p>
+          We specialize in the careful handling and transportation of fragile and
+          sensitive items such as glassware, electronics, artwork, and precision
+          equipment. Our team uses protective packaging, secure loading methods,
+          and controlled handling processes to minimize risk and ensure your
+          valuable items arrive safely and intact.
+        </p>
+        <a href="quotes.html" class="order-btn">Order Now</a>
       </div>
 
       <div class="service-card">
         <img src="data/images/const.jpg">
         <h3>Construction Material Hauling</h3>
-        <p>Transport of heavy construction materials to any destination.</p>
+        <p>
+          Pamoja Cargo provides reliable transportation for construction materials
+          including cement, steel, tiles, timber, and heavy building supplies.
+          We support construction projects of all sizes by ensuring materials are
+          delivered efficiently, securely, and on time to job sites across the region.
+        </p>
+        <a href="quotes.html" class="order-btn">Order Now</a>
       </div>
 
       <div class="service-card">
         <img src="data/images/med.jpg">
         <h3>Medical Equipments</h3>
-        <p>Fast, safe, and secure delivery of medical equipment.</p>
+        <p>
+          We understand the critical importance of medical logistics. Our medical
+          equipment transport service ensures fast, secure, and compliant delivery
+          of hospital equipment, diagnostic devices, and medical supplies, handled
+          with precision and care to meet healthcare standards.
+        </p>
+        <a href="quotes.html" class="order-btn">Order Now</a>
       </div>
 
       <div class="service-card">
         <img src="data/images/house.jpg">
         <h3>Household Goods Moving</h3>
-        <p>Reliable home moving services ensuring item safety.</p>
+        <p>
+          Whether relocating locally or internationally, our household moving
+          services ensure your personal belongings are packed, transported, and
+          delivered safely. From furniture and appliances to personal valuables,
+          we handle your move with professionalism and attention to detail.
+        </p>
+        <a href="quotes.html" class="order-btn">Order Now</a>
       </div>
 
       <div class="service-card">
         <img src="data/images/event.jpg">
         <h3>Event Logistics</h3>
-        <p>Full logistical support for events and exhibitions.</p>
+        <p>
+          We provide complete logistics support for exhibitions, conferences,
+          concerts, and corporate events. Our team manages transport, setup timing,
+          and coordination to ensure all event materials arrive on schedule and
+          are ready for successful execution.
+        </p>
+        <a href="quotes.html" class="order-btn">Order Now</a>
       </div>
 
       <div class="service-card">
         <img src="data/images/express.jpg">
         <h3>Express Cargo</h3>
-        <p>Fast and priority delivery for urgent shipments.</p>
+        <p>
+          Our express cargo service is designed for urgent shipments that require
+          priority handling and rapid delivery. With optimized routes and fast
+          processing, we ensure time-sensitive cargo reaches its destination
+          without unnecessary delays.
+        </p>
+        <a href="quotes.html" class="order-btn">Order Now</a>
       </div>
 
       <div class="service-card">
         <img src="data/images/machine.jpg">
         <h3>Machine Transport</h3>
-        <p>Secure heavy machinery and industrial equipment transport.</p>
+        <p>
+          Pamoja Cargo offers specialized transport solutions for heavy machinery
+          and industrial equipment. Using secure loading techniques and appropriate
+          transport vehicles, we ensure safe movement of large-scale machinery
+          for industrial, agricultural, and commercial use.
+        </p>
+        <a href="quotes.html" class="order-btn">Order Now</a>
       </div>
 
       <div class="service-card">
         <img src="data/images/electro.jpg">
         <h3>Electronic Transport</h3>
-        <p>Safe transport of electronic devices & home appliances.</p>
+        <p>
+          We handle the transportation of electronic devices and home appliances
+          with extreme care. Our service protects sensitive components from damage,
+          moisture, and impact, ensuring reliable delivery for both retail and
+          personal shipments.
+        </p>
+        <a href="quotes.html" class="order-btn">Order Now</a>
       </div>
 
       <div class="service-card">
         <img src="data/images/paper.jpg">
         <h3>Paper & Lumber Transport</h3>
-        <p>Reliable movement of paper products and lumber.</p>
+        <p>
+          Our paper and lumber transport service supports publishers, manufacturers,
+          and construction businesses. We ensure proper stacking, protection, and
+          secure transport to prevent damage during transit.
+        </p>
+        <a href="quotes.html" class="order-btn">Order Now</a>
       </div>
 
       <div class="service-card">
         <img src="data/images/contain.jpg">
         <h3>Container Trucking</h3>
-        <p>Domestic and international container transport services.</p>
+        <p>
+          We provide efficient domestic and international container trucking
+          services for full and consolidated loads. Our fleet and logistics
+          coordination ensure safe container movement between ports, warehouses,
+          and final destinations.
+        </p>
+        <a href="quotes.html" class="order-btn">Order Now</a>
       </div>
 
       <div class="service-card">
         <img src="data/images/retail.jpg">
         <h3>Retail Distributions</h3>
-        <p>Efficient logistics for retail stores and supply chains.</p>
+        <p>
+          Pamoja Cargo supports retail businesses with dependable distribution
+          services. We manage supply chains, store deliveries, and inventory
+          movement to help retailers maintain smooth operations and meet
+          customer demand efficiently.
+        </p>
+        <a href="quotes.html" class="order-btn">Order Now</a>
       </div>
 
     </div>
   </div>
 </section>
+
 
 <!-- Footer -->
 <footer class="footer">
@@ -540,3 +749,4 @@ document.addEventListener("click", function (event) {
 </script>
 </body>
 </html>
+
