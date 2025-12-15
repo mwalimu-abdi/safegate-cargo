@@ -10,7 +10,15 @@
 </head>
 <body>
   <style>
-   /* ===== DESKTOP MENU ===== */
+
+    /* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+ /* ===== DESKTOP MENU ===== */
 .desktop-menu {
   display: none;
   gap: 24px;
@@ -86,23 +94,6 @@
 
 .desktop-menu a:hover::after {
   transform: scaleX(1);
-}
-/* Each letter */
-
-
-   .letter {
-    opacity: 0;
-    display: inline-block;
-    transform: translateY(-250px) scale(1.1); /* start WAY above */
-    animation: smoothFall 1.3s ease-out forwards;
-}
-    
-    /* Reset & Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
 }
 /* Dropdown Menu Styling */
 .dropdown-menu {
@@ -289,7 +280,6 @@ body, nav.dropdown-menu {
 
 
 /* === ALL ABOVE ARE CLEAN === */
-
 .container {
       max-width: 800px;
       margin: 50px auto;
@@ -310,21 +300,7 @@ body, nav.dropdown-menu {
       flex-direction: column;
       gap: 15px;
     }
-
-    input, select, textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-      width: 100%;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    button {
+     .request-quote-btn {
       background: #0a2540;
       color: #fff;
       padding: 15px;
@@ -334,9 +310,17 @@ body, nav.dropdown-menu {
       cursor: pointer;
       transition: background 0.3s;
     }
-
-    button:hover {
-      background: #1b3a6f;
+    input, select, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      width: 100%;
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 100px;
     }
 
     .success-message {
@@ -356,11 +340,6 @@ body, nav.dropdown-menu {
 
   h1 {
     font-size: 22px;
-  }
-
-  button {
-    font-size: 16px;
-    padding: 12px;
   }
   
 /* Footer */
@@ -450,18 +429,16 @@ body, nav.dropdown-menu {
     <input type="email" name="email" placeholder="Email Address" required>
     <select name="service" required>
       <option value="" disabled selected>Select Service Type</option>
-      <option value="vehicle">Vehicle Transport</option>
-      <option value="livestock">Livestock Transport</option>
       <option value="fragile">Fragile Cargo</option>
       <option value="construction">Construction Material</option>
       <option value="medical">Medical Equipment</option>
-      <option value="pharma">Pharmaceutical Transport</option>
       <option value="household">Household Goods</option>
       <option value="event">Event Logistics</option>
+      <option value="express">Sourcing</option>
       <option value="express">Express Cargo</option>
     </select>
     <textarea name="details" placeholder="Describe your cargo / shipment details..." required></textarea>
-    <button type="submit">Request Quote</button>
+   <button type="submit" class="request-quote-btn">Request Quote</button>
   </form>
   <div class="success-message" id="successMessage">
   Thank you for your request!  
@@ -595,7 +572,6 @@ form.addEventListener("submit", function (e) {
 
 </body>
 </html>
-
 
 
 
