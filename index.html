@@ -1,17 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our service — Pamoja Cargo</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>PAMOJA CARGO Services</title>
+  <meta name="description" content="Pamoja Cargo — Air, Sea & Land freight, clearing & forwarding. Request a quote, track shipments, and contact us." />
+  <meta name="theme-color" content="#0b3659" />
+   <meta name="google" content="notranslate">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%230b3659%22/></svg>">
+
   <style>
     
-   /* Dropdown Menu Styling */
-   /* ===== DESKTOP MENU ===== */
+/* Falling title container */
+.falling-title-container {
+    position: relative;
+    width: 90%;
+    margin-top: 70px;         /* distance from top of hero */
+    text-align: center;
+    z-index: 5;
+}
+/* ===== DESKTOP MENU ===== */
 .desktop-menu {
   display: none;
   gap: 24px;
@@ -97,6 +106,352 @@
     transform: translateY(-250px) scale(1.1); /* start WAY above */
     animation: smoothFall 1.3s ease-out forwards;
 }
+  
+  
+
+
+/* HERO TEXT FIXES */
+.falling-title,
+.hero-subtext,
+.hero-pillars {
+    color: #fff !important;
+    text-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+ 
+.falling-title {
+    z-index: 5;
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;              /* smaller gap */
+    font-size: 25px !important;
+    font-weight: 550 !important;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;   /* reduce spacing */
+    text-align: center;
+    justify-content: center;
+    padding: 70px 20px 50px 20px; /* Add extra top padding */
+    flex-wrap: wrap;       /* 🔥 allows letters to wrap instead of going off screen */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* EXTRA clean mobile optimization */
+@media (max-width: 400px) {
+    .falling-title {
+        font-size: 20px;
+        gap: 2px;
+    }
+}
+@keyframes smoothFall {
+    0% {
+        opacity: 0;
+        transform: translateY(-250px) scale(1.1); /* unseen start */
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(10px) scale(1.02); /* soft landing overshoot */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/* Prevent layout break */
+.hero-header {
+    position: relative;
+    width: 100%;
+    height: 570px;
+    overflow: hidden;
+    padding-top: 90px;   /* ← Adds extra space above hero */
+}
+
+.hero-header .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 130%;
+    object-fit: cover;
+    
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+   
+    z-index: 1;
+}
+
+/* Phone responsive */
+@media (max-width: 480px) {
+    .main-falling-title {
+        font-size: 28px;
+        margin-top: 80px;
+        gap: 3px;
+    }
+}
+
+/* Individual letter animation */
+.title-letter {
+    opacity: 0;
+    display: inline-block;
+    animation: titleDrop 1.1s ease-out forwards;
+}
+
+@keyframes titleDrop {
+    0% { opacity: 0; transform: translateY(-120px) scale(1.08); }
+    60% { opacity: 1; transform: translateY(8px) scale(1.02); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+/* === Variables === */
+    :root{
+      --bg:#f7f9fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#ff7a00;    /* orange accent */
+      --primary:#0b3659;   /* deep navy */
+      --yassir-blue: #0067ff; /* exact Yassir blue used in header */
+      --glass: rgba(11,54,89,0.06);
+      --radius:14px;
+      --maxw:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+    
+
+
+
+
+    /* === Reset-ish + base === */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#f7f9fb 0%, #eef3f8 100%);
+      color:#0b1b2b;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:0; /* removed global padding so header is full-width like reference */
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    a{color:var(--primary); text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+
+    /* === Layout container (page content) === */
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:32px 20px; 
+    }
+
+   
+
+
+
+    .y-mid .search input{
+      border:0;background:transparent;outline:none;font-size:14px;width:100%;
+    }
+    /* center logo area (we'll place falling letters here) */
+    .y-mid .center { justify-content:center; flex:1; }
+    .y-mid .logo-wrap {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:64px;
+    }
+    /* right icons */
+    .y-mid .right { gap:18px; font-size:20px; color:#333; }
+
+    /* 3) Bottom navigation bar (white) */
+    .y-nav {
+      width:100%;
+      background:#fff;
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      padding:12px 20px;
+      border-bottom:1px solid #eee;
+      font-weight:600;
+      font-size:16px;
+    }
+    .y-nav a { color:#111; text-decoration:none; }
+    .y-nav a:hover { color: var(--yassir-blue); text-decoration:underline; }
+
+    /* ================================
+       HERO (your existing big hero)
+       kept as full-screen below header
+       ================================ */
+
+   
+.hero-subtext {
+    z-index: 5;
+    margin-top: 20px;
+    font-size: 22px !important;   /* adjust as you like */
+    font-weight: 500;
+    color: white;
+    max-width: 900px;
+    text-align: center;
+    line-height: 1.3;
+    animation: fadeInUp 1.5s ease forwards;
+    opacity: 0;
+}
+
+/* soft fade + upward motion */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Subtext */
+.hero-subtext {
+    z-index: 5;
+    margin-top: 20px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.3;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity:0; transform:translateY(25px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+/* Pillars */
+.hero-pillars {
+    margin-top: 12px;
+    z-index: 5;
+    text-align: center;
+    font-size: 20px;
+    opacity: 0;
+    animation: fadeInUp 1.8s forwards;
+}
+
+.hero-pillars .dot {
+    margin: 0 8px;
+    opacity: 0.8;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width:480px){
+    .falling-title { font-size:22px; margin-top:150px; }
+    .hero-subtext { font-size:16px; padding:0 10px; }
+    .hero-pillars { font-size:16px; }
+}
+/* ===== HERO BUTTONS ===== */
+.hero-buttons {
+    margin-top: 25px;
+    text-align: center;
+    z-index: 5;
+    position: relative;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 50px;
+    margin: 0 10px;
+    transition: 0.25s ease;
+}
+
+/* Rate Us button – white background */
+.btn-rate {
+    background: #ffffff;
+    color: #0b3659;
+}
+
+.btn-rate:hover {
+  background-color: #ff7a00;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(255, 122, 0, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Contact Us button – no background, white border */
+.btn-contact {
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+.btn-contact:hover {
+  background-color: #18a558;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(24, 165, 88, 0.35);
+  transform: translateY(-2px);
+}
+.btn-rate,
+.btn-contact {
+  transition: 
+    background-color 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+
+
+
+/* === RISE UP ANIMATION FOR SUBTEXT, PILLARS & BUTTONS === */
+.hero-subtext,
+.hero-pillars,
+.hero-buttons {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: riseUp 1.3s ease-out forwards;
+}
+
+.hero-subtext {
+    animation-delay: 1.2s; /* appears first after falling title */
+}
+
+.hero-pillars {
+    animation-delay: 1.5s; /* appears after subtext */
+}
+
+.hero-buttons {
+    animation-delay: 1.8s; /* appears last */
+}
+
+@keyframes riseUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    
+/* Mobile */
+@media (max-width:480px){
+    .hero-buttons a {
+        font-size: 16px;
+        padding: 10px 22px;
+        margin: 5px;
+    }
+}
+/* RESPONSIVE FIXES */
+@media (max-width:480px){
+    .falling-title { font-size:22px; margin-top:150px; }
+    .hero-subtext { font-size:16px; padding:0 10px; }
+    .hero-pillars { font-size:16px; }
+}
+
+
+/* Dropdown Menu Styling */
 .dropdown-menu {
     position: fixed;
     top: 0;
@@ -283,110 +638,543 @@ body, nav.dropdown-menu {
 /* === ALL ABOVE ARE CLEAN === */
 
 
-/* MAIN SECTION */
-  .services-section {
-    position: relative;
-    padding: 60px 20px;
-    overflow: hidden;
-  }
 
-  /* BACKGROUND IMAGE */
-  .service-backimg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url("data/images/pers.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.55;
 
-    z-index: -1;          /* puts background behind everything */
-    pointer-events: none; /* makes it unclickable */
-}
 
- /* BACKGROUND IMAGE */
-  .servic-backimg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url("data/images/pers.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.15;
+ /* === Variables === */
+    :root{
+      --bg:#f7f9fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#ff7a00;    /* orange accent */
+      --primary:#0b3659;   /* deep navy */
+      --yassir-blue: #0067ff; /* exact Yassir blue used in header */
+      --glass: rgba(11,54,89,0.06);
+      --radius:14px;
+      --maxw:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+    
 
-    z-index: -1;          /* puts background behind everything */
-    pointer-events: none; /* makes it unclickable */
-}
-     
-  /* CONTENT ABOVE BACKGROUND */
-  .service-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: auto;
-    color: #000;
-    text-align: center;
-  }
 
-  .services-section h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
-    font-weight: bold;
-    padding: 80px 20px 50px 20px; /* Add extra top padding */
-  }
 
-  .services-section p {
-    font-size: 18px;
+
+    /* === Reset-ish + base === */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#f7f9fb 0%, #eef3f8 100%);
+      color:#0b1b2b;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:0; /* removed global padding so header is full-width like reference */
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    a{color:var(--primary); text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+
+    /* === Layout container (page content) === */
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:32px 20px; 
+    }
+
+   
+
+
+
+    .y-mid .search input{
+      border:0;background:transparent;outline:none;font-size:14px;width:100%;
+    }
+    /* center logo area (we'll place falling letters here) */
+    .y-mid .center { justify-content:center; flex:1; }
+    .y-mid .logo-wrap {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:64px;
+    }
+    /* right icons */
+    .y-mid .right { gap:18px; font-size:20px; color:#333; }
+
+    /* 3) Bottom navigation bar (white) */
+    .y-nav {
+      width:100%;
+      background:#fff;
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      padding:12px 20px;
+      border-bottom:1px solid #eee;
+      font-weight:600;
+      font-size:16px;
+    }
+    .y-nav a { color:#111; text-decoration:none; }
+    .y-nav a:hover { color: var(--yassir-blue); text-decoration:underline; }
+
+    /* ================================
+       HERO (your existing big hero)
+       kept as full-screen below header
+       ================================ */
+
+   
+.hero-subtext {
+    z-index: 5;
+    margin-top: 20px;
+    font-size: 22px !important;   /* adjust as you like */
+    font-weight: 500;
+    color: white;
     max-width: 900px;
-    margin: 0 auto 40px auto;
-    line-height: 1.6;
-  }
-
-  /* SERVICES GRID */
-  .services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-  }
-
-  /* SERVICE CARD */
-  .service-card {
-    background: #ffffffcc;
-    border-radius: 10px;
-    padding: 15px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: 0.3s;
-  }
+    line-height: 1.3;
+    animation: fadeInUp 1.5s ease forwards;
+    opacity: 0;
+}
 
-  .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
-  }
+/* soft fade + upward motion */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-  .service-card img {
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+   
+
+.hero-nav {
+    position: relative;
+    z-index: 5;
+}
+/* WHY CHOOSE US - FULL WIDTH */
+.why-us {
     width: 100%;
-    height: 160px;
+    margin: 0;
+    padding: 30px 0; /* slimmer height */
+    text-align: center;
+}
+
+.why-us h2 {
+    font-size: 34px;
+    margin-bottom: 25px;
+    font-weight: 800;
+    color: #0b3659;
+    width: 100%;
+}
+
+/* FULL-WIDTH GRID */
+.why-grid {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* SHORTER, WIDER CARDS */
+.why-card {
+    background: #fff;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    padding: 18px;
+    min-height: 300px;  /* SHORTER! */
+    height: auto;
+    border-style: solid;
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 6px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.12);
+}
+
+/* SHORTER IMAGE */
+.why-card img {
+    width: 100%;
+    height: 120px;  /* SHORTER! */
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
-  }
+}
 
-  .service-card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-  }
+.why-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
 
-  .service-card p {
+.why-card p {
     font-size: 15px;
-    line-height: 1.5;
+    color: #444;
+    line-height: 1.45;
+}
+
+/* RESPONSIVE */
+@media (max-width: 990px) {
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+.boll{
+  font-weight: 00;
+}
+
+    .letter {
+      opacity: 2;
+      position: relative;
+      display:inline-block;
+      animation: drop 1.1s forwards ease-out;
+    }
+
+    @keyframes drop {
+      0%   { opacity: 0; transform: translateY(-140px) scale(1.02); }
+      60%  { opacity: 1; transform: translateY(10px) scale(1); }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* small responsiveness */
+    @media (max-width:980px){
+      .y-mid .search { width:220px; }
+      .falling-title { font-size:56px; margin-top:80px; }
+    }
+    @media (max-width:620px){
+      .y-topbar { padding:8px 12px; font-size:13px; }
+      .y-mid { padding:12px 16px; height:84px; }
+      .y-mid .search { width:140px; }
+      .y-nav { gap:16px; font-size:14px; padding:10px; }
+      .falling-title { font-size:40px; margin-top:50px; letter-spacing:2px; }
+    }
+    
+   /* === SERVICE SECTIOM === */
+   .services-checklist .service-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+   
+.services-checklist {
+  display: grid;
+  gap: 25px; /* THIS creates transparent space between lines */
+  position: relative;
+  z-index: 2;
+  background: transparent !important; /* Parent must be transparent */
+}
+.service-item {
+  display: flex;
+  gap: 4px;
+  padding: 6px 6px;
+  border-radius: 10px;
+  height: 73px;
+  width: 100%auto;
+
+  /* KEEP your normal background here */
+  background: rgba(14, 221, 125, 0.75); 
+  backdrop-filter: blur(2px);
+}
+.check-wrapper {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background: #ffffff;              /* outer white ring */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 14px;
+}
+
+.check-inner {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #00A859;             /* inner green circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.check-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  background-color: #00A859;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 14px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+}
+
+
+.service-item h4 {
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 360;
+}
+
+.service-item p {
+  margin: 5px 0 0;
+  color: #e8e8e8;
+  font-size: 15px;
+  padding-top: 0%;
+}
+ice-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
   }
 
-/* Footer */
+
+  .testimonial-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.review-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+/* Card Style */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  padding: 30px 20px;
+}
+
+.person-img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
+.review-text {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.6;
+  margin: 10px 0 15px 0;
+}
+
+.reviewer-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0066cc;
+}
+
+.reviewer-role {
+  font-size: 15px;
+  color: #777;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  font-weight: 600;
+  color: #0066cc;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.left-arrow {
+  left: 5px;
+}
+
+.right-arrow {
+  right: 5px;
+}
+
+.arrow:hover {
+  color: #004f9a;
+  transform: translateY(-50%) scale(1.15);
+}
+
+
+
+/* Dots */
+.slider-dots {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.slider-dots span {
+  height: 10px;
+  width: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 4px;
+  transition: 0.4s;
+}
+
+.slider-dots .active {
+  background: #007bff;
+  width: 14px;
+  border-radius: 12px;
+}
+
+#safegate-faqs {
+  padding: 40px;
+  background: #f9f9f9;
+}
+
+#safegate-faqs h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-container {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.faq-item {
+  position: relative;
+}
+
+.faq-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #ddd;
+}
+
+.faq-question {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: #f1f1f1;
+}
+
+.faq-left-arrow,
+.faq-arrow {
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.faq-question-text {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.faq-answer {
+  max-height: 0; /* start collapsed */
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 1000px; /* very large to fit any content */
+  padding: 15px 20px;
+}
+
+
+     /* Footer */
     footer {
       background: #004a8f;
       color: white;
@@ -415,46 +1203,19 @@ body, nav.dropdown-menu {
     .social-icons a:hover {
       color: #00bfff;
     }
-    /* ===== SERVICE CARD ORDER BUTTON ===== */
-
-.order-btn {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 10px 22px;
-  background: #004a8f;        /* keeps your site color */
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 30px;
-  transition: 
-    background-color 0.35s ease,
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-/* Hover effect */
-.order-btn:hover {
-  background: #ff7a00;        /* attractive action color */
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(255, 122, 0, 0.35);
-}
-
-/* Mobile tap safety */
-.order-btn:active {
-  transform: scale(0.96);
-}
-
 
 
   </style>
+
+  </style>
+  </head>
   <body>
 <div class="top-bar">
     <!-- Left: Menu -->
     <button id="menuToggle" class="menu-btn">☰</button>
 
     <!-- Logo next to menu -->
-    <img src="data/images/loggo.jpg"
+    <img src="data/images/loggo.webp"
          class="top-logo-small"
          alt="Pamoja Cargo Logo"
          width="48"
@@ -491,186 +1252,450 @@ body, nav.dropdown-menu {
   <a href="quotes.html">Quote</a>
 </nav>
 </div>
+
+
+<!-- ======= MY EXISTING HERO (kept as full-screen below header) ======= -->
+  <header class="hero-header">
+    
+    <img src="data/images/img1.jpg" class="hero-bg" alt="">
+    <div class="overlay"></div>
+
+    <!-- Email + Phone -->
+    <div class="hero-email">
+        <i class="fa fa-envelope"></i>
+        <a href="mailto:safegatedxb@gmail.com">pamojacargo@gmail.com</a>
+    </div>
+
+    <div class="hero-contact-line">
+        📞 Call Us: <strong>0705 044 066</strong>
+    </div>
+
+    <!-- Falling Hero Title -->
+    <!-- FALLING MAIN TITLE -->
+<div id="fallTitle" class="falling-title"></div>
+
+
+    <!-- Subtext -->
+    <div class="hero-subtext">
+        Delivering cargo safely, swiftly, and across borders —
+        your trusted logistics partner.
+    </div>
+
+    <!-- Pillars -->
+    <div class="hero-pillars">
+        Safety <span class="dot">•</span> Speed <span class="dot">•</span> Trust
+    </div>
+    <!-- Hero Buttons -->
+<div class="hero-buttons">
+    <a href="review.html" class="btn-rate">Rate Us</a>
+    <a href="contacts.html" class="btn-contact">Contact Us</a>
 </div>
 
-<section class="services-section">
+   <!-- Social Icons + Translate -->
+<div class="hero-socials">
 
-  <!-- ⭐ BACKGROUND IMAGE TAG ⭐ -->
-  
+    <a href="https://wa.me/254705044066" target="_blank" class="icon-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-  <div class="service-content">
-    <h2>Our Services</h2>
+    <a href="mailto:safegatedxb@gmail.com" class="icon-email">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
 
+    <a href="#" class="icon-facebook">
+        <i class="fab fa-facebook"></i>
+    </a>
+
+    <a href="#" class="icon-linkedin">
+        <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="#" class="icon-twitter">
+        <i class="fab fa-x-twitter"></i>
+    </a>
+
+    <button id="translate-btn">EN</button>
+</div>
+
+
+    <div id="google_translate_element" style="display:none;"></div>
+
+</header>
+<a href="https://wa.me/254705044066" class="floating-whatsapp" target="_blank" aria-label="WhatsApp Chat">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+  <!-- ======= PAGE CONTENT (unchanged, kept within .container) ======= -->
+    <section class="why-us">
+    <h2>Why Choose Us As Your Logistic Company?</h2>
+
+    <div class="why-grid">
+
+       <div class="why-card">
+    <img src="data/images/img9.jpg" alt="Customer Service">
+    <h3>Customer Service You Can Always Trust</h3>
     <p>
-      At Pamoja Cargo, we provide comprehensive logistics and cargo transportation
-      solutions designed to meet the growing demands of individuals, businesses,
-      and organizations across East Africa. Our services are built on reliability,
-      safety, and efficiency, ensuring that every shipment — large or small —
-      reaches its destination in perfect condition and on schedule.
-
-      <br><br>
-
-      We handle a wide range of cargo types, including personal belongings,
-      commercial merchandise, industrial materials, and specialized shipments.
-      With a strong international network and experienced logistics professionals,
-      we manage the entire shipping process from origin to final delivery,
-      allowing our clients to focus on their core activities with confidence.
-
-      <br><br>
-
-      <strong>Cargo Destinations & Origin Countries</strong><br>
-      Pamoja Cargo connects global markets to East Africa through well-established
-      shipping routes from major origin countries such as Dubai, China, India,
-      Turkey, the United States, Thailand, Canada, and Saudi Arabia. We ensure
-      smooth and secure delivery to key destinations in Kenya, Tanzania, Uganda,
-      and Somalia — including Nairobi, Mombasa, Kisumu, Eldoret, Dar es Salaam,
-      Kampala, and Mogadishu. No matter where your goods originate, we guarantee
-      seamless handling, customs coordination, and timely delivery.
+        We believe great logistics begins with great communication. At Pamoja Cargo,
+        our support team provides fast responses, real-time updates, and personalized help
+        to ensure a smooth and stress-free delivery experience.
     </p>
+</div>
 
-    <div class="services-container">
+<div class="why-card">
+    <img src="data/images/img13.jpg" alt="Safe Delivery">
+    <h3>Safe & Secure Delivery</h3>
+    <p>
+        We handle every shipment with care — from packaging to transportation.
+        Your goods are delivered safely across the Gulf and beyond with maximum reliability.
+    </p>
+</div>
 
-      <div class="service-card">
-        <img src="data/images/paper.jpg">
-        <h3>Fragile Cargo</h3>
-        <p>
-          We specialize in the careful handling and transportation of fragile and
-          sensitive items such as glassware, electronics, artwork, and precision
-          equipment. Our team uses protective packaging, secure loading methods,
-          and controlled handling processes to minimize risk and ensure your
-          valuable items arrive safely and intact.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
+<div class="why-card">
+    <img src="data/images/img14.jpg" alt="Fast Delivery">
+    <h3>Fast & Reliable Shipping</h3>
+    <p>
+        Timely deliveries are our priority. Whether local or international,
+        our optimized routes and dedicated team ensure your shipment arrives right on time.
+    </p>
+</div>
 
-      <div class="service-card">
-        <img src="data/images/const.jpg">
-        <h3>Construction Material Hauling</h3>
-        <p>
-          Pamoja Cargo provides reliable transportation for construction materials
-          including cement, steel, tiles, timber, and heavy building supplies.
-          We support construction projects of all sizes by ensuring materials are
-          delivered efficiently, securely, and on time to job sites across the region.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/med.jpg">
-        <h3>Medical Equipments</h3>
-        <p>
-          We understand the critical importance of medical logistics. Our medical
-          equipment transport service ensures fast, secure, and compliant delivery
-          of hospital equipment, diagnostic devices, and medical supplies, handled
-          with precision and care to meet healthcare standards.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/house.jpg">
-        <h3>Household Goods Moving</h3>
-        <p>
-          Whether relocating locally or internationally, our household moving
-          services ensure your personal belongings are packed, transported, and
-          delivered safely. From furniture and appliances to personal valuables,
-          we handle your move with professionalism and attention to detail.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/event.jpg">
-        <h3>Event Logistics</h3>
-        <p>
-          We provide complete logistics support for exhibitions, conferences,
-          concerts, and corporate events. Our team manages transport, setup timing,
-          and coordination to ensure all event materials arrive on schedule and
-          are ready for successful execution.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/express.jpg">
-        <h3>Express Cargo</h3>
-        <p>
-          Our express cargo service is designed for urgent shipments that require
-          priority handling and rapid delivery. With optimized routes and fast
-          processing, we ensure time-sensitive cargo reaches its destination
-          without unnecessary delays.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/machine.jpg">
-        <h3>Machine Transport</h3>
-        <p>
-          Pamoja Cargo offers specialized transport solutions for heavy machinery
-          and industrial equipment. Using secure loading techniques and appropriate
-          transport vehicles, we ensure safe movement of large-scale machinery
-          for industrial, agricultural, and commercial use.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/electro.jpg">
-        <h3>Electronic Transport</h3>
-        <p>
-          We handle the transportation of electronic devices and home appliances
-          with extreme care. Our service protects sensitive components from damage,
-          moisture, and impact, ensuring reliable delivery for both retail and
-          personal shipments.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/paper.jpg">
-        <h3>Paper & Lumber Transport</h3>
-        <p>
-          Our paper and lumber transport service supports publishers, manufacturers,
-          and construction businesses. We ensure proper stacking, protection, and
-          secure transport to prevent damage during transit.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/contain.jpg">
-        <h3>Container Trucking</h3>
-        <p>
-          We provide efficient domestic and international container trucking
-          services for full and consolidated loads. Our fleet and logistics
-          coordination ensure safe container movement between ports, warehouses,
-          and final destinations.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/retail.jpg">
-        <h3>Retail Distributions</h3>
-        <p>
-          Pamoja Cargo supports retail businesses with dependable distribution
-          services. We manage supply chains, store deliveries, and inventory
-          movement to help retailers maintain smooth operations and meet
-          customer demand efficiently.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
+<div class="why-card">
+    <img src="data/images/track.jpg" alt="Real-time Tracking">
+    <h3>Track Your Goods Anytime</h3>
+    <p>
+        Stay updated with real-time tracking. Know exactly where your shipment is
+        and when it will arrive — total transparency from start to finish.
+    </p>
+</div>
+<div class="why-card">
+    <img src="data/images/img3.webp" alt="Real-time Tracking">
+    <h3>From Sourcing To Delivery</h3>
+    <p>
+       We provide full support including sourcing materials, facilitating payments and delivery.
+    </p>
+</div>
 
     </div>
+</section>
+
+<section 
+  class="services-section"
+  style="
+    background-image: url('data/images/img111.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 20px;
+    position: relative;
+  "
+>
+
+  <!-- Dark overlay -->
+  <div style="
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.45);
+    ">
   </div>
+
+  <!-- CONTENT -->
+  <div style="position: relative; z-index: 2; color: white; max-width: 1000px; margin: auto;">
+
+    <h2 style="text-align:center; font-size: 38px; margin-bottom: 15px;">Our Services</h2>
+
+    <p style="text-align:center; font-size: 18px; max-width: 800px; margin: auto; margin-bottom: 40px;">
+      At Pamoja Cargo, we provide a wide range of logistics and transportation services tailored to meet your diverse needs. 
+      From heavy machinery to delicate medical equipment, our professional team ensures safe, reliable, and timely delivery 
+      across multiple destinations.
+    </p>
+
+   <div class="services-checklist" style="margin-top: 30px;">
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Fragile Cargo</h4>
+      <p>Extra care for delicate and breakable items.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Construction Material Hauling</h4>
+      <p>Quick delivery of all construction materials.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Medical Equipments</h4>
+      <p>Safe and timely transport of medical devices.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Household Goods Moving</h4>
+      <p>Smooth and safe moving for all household items.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Event Logistics</h4>
+      <p>Complete support for events and exhibitions.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Express Cargo</h4>
+      <p>Fast delivery for urgent shipments.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Machine Transport</h4>
+      <p>Secure hauling for heavy machinery.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Electronic Transport</h4>
+      <p>Careful delivery of electronic devices.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Paper & Lumber Transport</h4>
+      <p>Efficient delivery of paper and lumber goods.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Container Trucking</h4>
+      <p>Reliable transport for all container loads.</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <span class="check-wrapper">
+      <span class="check-inner">✔</span>
+    </span>
+    <div>
+      <h4>Retail Distributions</h4>
+      <p>Fast delivery solutions for retail stores.</p>
+    </div>
+  </div>
+
+</div>
 </section>
 
 
-<!-- Footer -->
+
+
+<section class="testimonial-section">
+  <h2 class="review-title">What People Say About Us</h2>
+
+  <div class="slider-wrapper">
+
+    <!-- Left Arrow -->
+    <div class="arrow left-arrow">&#10094;</div>
+
+    <div class="slider-container">
+      <div class="slider-track">
+
+        <!-- Slide 1 -->
+        <div class="slide card">
+          <img src="data/images/picc.webp" class="person-img" alt="">
+          <p class="review-text">
+            “They handled my cargo smoothly and professionally. Very reliable service.”
+          </p>
+          <h3 class="reviewer-name">Abdi M. Adan</h3>
+          <p class="reviewer-role">Business Owner</p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide card">
+          <img src="data/images/pic2.webp" class="person-img" alt="">
+          <p class="review-text">
+            “Pamoja Cargo is my trusted logistics partner. Always on time.”
+          </p>
+          <h3 class="reviewer-name">Mary Wangari</h3>
+          <p class="reviewer-role">E-commerce Seller</p>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide card">
+          <img src="data/images/pic.webp" class="person-img" alt="">
+          <p class="review-text">
+            “Excellent tracking, fast delivery and my goods arrived safely. Highly recommended.”
+          </p>
+          <h3 class="reviewer-name">James Otieno</h3>
+          <p class="reviewer-role">Retail Supplier</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right Arrow -->
+    <div class="arrow right-arrow">&#10095;</div>
+
+  </div>
+
+  <div class="slider-dots"></div>
+</section>
+
+<section id="safegate-faqs">
+  <h2>FAQs</h2>
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Which cargo service near me is best?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        Pamoja Cargo is your trusted cargo partner for fast, affordable, and safe deliveries from countries like Dubai, China, India, Turkey, the USA, Thailand, Canada, and Saudi Arabia to Kenya, Uganda, Tanzania and Somalia. We ensure smooth handling and reliable shipment tracking for all clients.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Which is the best freight forwarding company in Dubai?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        Pamoja Cargo stands out as one of the top freight forwarding companies due to our affordable rates, fast processing, and seamless shipping services to East Africa.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Which company offers the best cargo service to Kenya?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        Pamoja Cargo offers the most reliable and customer-friendly
+         cargo solutions for shipping electronics, clothing, perfumes, 
+         home appliances, commercial goods, and more from multiple countries to Kenya, Uganda, Tanzania and Somalia.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">What cargo services does Pamoja Cargo provide?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        We offer air cargo, sea cargo, door-to-door deliveries, commercial cargo, personal shipments, consolidation, and secure handling for fragile items. Customers can ship goods from Dubai, Turkey, China, India, USA, Canada, Thailand, and Saudi Arabia.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Which countries does Pamoja Cargo ship from?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        We ship goods from Dubai, China, Turkey, India, USA, Thailand, Saudi Arabia, and Canada — safely delivered to Kenya, Uganda, Tanzania and Somalia.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">How long does shipping take?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        Shipping times vary depending on the country and method:<br>
+        • Dubai to Kenya: 3–5 days<br>
+        • China to Kenya: 5–10 days<br>
+        • Others depend on the selected shipping option.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Do you offer door-to-door delivery in Kenya?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        Yes, we offer fast and secure door-to-door delivery across all major cities in the particular country,
+        Exapmle;  Nairobi, Mombasa, Kisumu, Eldoret in Kenya.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">What items can I send with Pamoja Cargo?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        You can ship electronics, fashion items, phones, perfumes, home goods, cosmetics, 
+        furniture, personal effects, and commercial goods. 
+        Restricted items depend on exporting and destination country`s regulations.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
-    <h2 class="footer-logo">PAMOJA CARGO </h2>
+    <h2 class="footer-logo">PAMOJA CARGO</h2>
 
     <h3>Contact Details</h3>
 
@@ -682,7 +1707,7 @@ body, nav.dropdown-menu {
       Bashir: <a href="tel:+971555042404">+971 55 504 2404</a><br>
       Abdi Rahman: <a href="tel:+971527056622">+971 52 705 6622</a><br>
       Abdullahi: <a href="tel:+971552094869">+971 55 209 4869</a><br>
-  
+     
     </p>
 
     <!-- Warehouse -->
@@ -723,8 +1748,8 @@ body, nav.dropdown-menu {
   </div>
 </footer>
 
-<script>
- const menuBtn = document.getElementById("menuToggle");
+  <script>
+const menuBtn = document.getElementById("menuToggle");
 const menu = document.getElementById("dropdownMenu");
 
 menuBtn.addEventListener("click", function (event) {
@@ -746,6 +1771,193 @@ document.addEventListener("click", function (event) {
     }
 });
 
-</script>
+
+/* ============================================================
+   2. FALLING LETTERS (HERO ONLY — repeats every 5 sec)
+   ============================================================ */
+(function () {
+    const title = "PAMOJA CARGO";
+    const target = document.getElementById("fallTitle");
+    if (!target) return;
+
+    function run() {
+        target.innerHTML = "";
+        [...title].forEach((ch, i) => {
+            const sp = document.createElement("span");
+            sp.textContent = ch;
+            sp.className = "letter";
+            sp.style.animationDelay = (i * 0.25) + "s";
+            target.appendChild(sp);
+        });
+    }
+
+    run();
+    setInterval(run, 5000);
+})();
+
+
+/* ============================================================
+   3.REVIEWS
+   ============================================================ */
+let current = 0;
+
+const track = document.querySelector(".slider-track");
+const slides = document.querySelectorAll(".slide");
+const totalSlides = slides.length;
+
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
+
+const dotsContainer = document.querySelector(".slider-dots");
+
+// Create dots
+slides.forEach((_, i) => {
+  let dot = document.createElement("span");
+  if (i === 0) dot.classList.add("active");
+  dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll(".slider-dots span");
+
+function showSlide(index) {
+  track.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+function nextSlide() {
+  current = (current + 1) % totalSlides;
+  showSlide(current);
+}
+
+function prevSlide() {
+  current = (current - 1 + totalSlides) % totalSlides;
+  showSlide(current);
+}
+
+rightArrow.onclick = nextSlide;
+leftArrow.onclick = prevSlide;
+
+setInterval(nextSlide, 3500);
+/*=============================================================
+   4. FAQs
+   ============================================================ */
+const faqItems = document.querySelectorAll('#safegate-faqs .faq-item');
+
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-question');
+  const leftArrow = item.querySelector('.faq-left-arrow');
+  const rightArrow = item.querySelector('.faq-arrow');
+
+  question.addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+
+    // Close all items first
+    faqItems.forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.faq-left-arrow').style.transform = 'rotate(0deg)';
+      i.querySelector('.faq-arrow').style.transform = 'rotate(0deg)';
+    });
+
+    if(!isActive){
+      item.classList.add('active');
+      leftArrow.style.transform = 'rotate(-90deg)';
+      rightArrow.style.transform = 'rotate(90deg)';
+    }
+  });
+});
+/*=============================================================
+   5. TRANSLATION
+   ============================================================ */
+// Close dropdown if open
+let langBoxOpen = null;
+
+document.getElementById("translate-btn").addEventListener("click", function (event) {
+
+    event.stopPropagation(); // stop immediate closing
+
+    // Remove old box if exists
+    if (langBoxOpen) {
+        langBoxOpen.remove();
+        langBoxOpen = null;
+        return;
+    }
+
+    // Create dropdown
+    let langBox = document.createElement("div");
+    langBox.className = "lang-dropdown";
+    langBox.style.position = "absolute";
+    langBox.style.background = "#fff";
+    langBox.style.border = "1px solid #ccc";
+    langBox.style.padding = "6px 10px";
+    langBox.style.borderRadius = "6px";
+    langBox.style.boxShadow = "0 2px 6px rgba(0,0,0,0.15)";
+    langBox.style.zIndex = 99999;
+
+    langBox.innerHTML = `
+        <div class="lang-option" data-lang="en">English</div>
+        <div class="lang-option" data-lang="sw">Swahili</div>
+        <div class="lang-option" data-lang="ar">Arabic</div>
+        <div class="lang-option" data-lang="so">Somali</div>
+    `;
+
+    document.body.appendChild(langBox);
+    langBoxOpen = langBox;
+
+    // Position dropdown under the button
+    const rect = this.getBoundingClientRect();
+    langBox.style.left = rect.left + "px";
+    langBox.style.top = rect.bottom + 5 + "px";
+
+    // Style options
+    document.querySelectorAll(".lang-option").forEach(option => {
+        option.style.padding = "6px 10px";
+        option.style.cursor = "pointer";
+
+        option.onmouseover = () => option.style.background = "#eee";
+        option.onmouseout  = () => option.style.background = "#fff";
+
+        // When user clicks a language
+        option.onclick = function () {
+            let lang = this.getAttribute("data-lang");
+
+            let select = document.querySelector("select.goog-te-combo");
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event("change"));
+            }
+
+            document.getElementById("translate-btn").textContent = lang.toUpperCase();
+
+            langBox.remove();
+            langBoxOpen = null;
+        };
+    });
+});
+
+// CLOSE DROPDOWN WHEN TAPPING ANYWHERE OUTSIDE
+document.addEventListener("click", function (event) {
+    if (langBoxOpen && !langBoxOpen.contains(event.target) && event.target.id !== "translate-btn") {
+        langBoxOpen.remove();
+        langBoxOpen = null;
+    }
+});
+  </script>
+  
 </body>
-</html>
+<html></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
