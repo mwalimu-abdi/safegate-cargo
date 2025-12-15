@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <title>Pamoja Cargo</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -462,7 +463,10 @@ body, nav.dropdown-menu {
     <textarea name="details" placeholder="Describe your cargo / shipment details..." required></textarea>
     <button type="submit">Request Quote</button>
   </form>
-  <div class="success-message" id="successMessage">Thank you! Your quote request has been submitted.</div>
+  <div class="success-message" id="successMessage">
+  Thank you for your request!  
+  Our team has received your quote request and will contact you shortly.
+</div>
 </div>
 
 <!-- Footer -->
@@ -541,6 +545,51 @@ document.addEventListener("click", function (event) {
         menuBtn.classList.remove("active");
         menuBtn.textContent = "☰";
     }
+});
+(function () {
+  emailjs.init("cnW7ixs8gtVK6NQkB"); // Public Key
+})();
+
+const form = document.getElementById("quoteForm");
+const successMsg = document.getElementById("successMessage");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Disable button to prevent multiple clicks
+  const btn = form.querySelector("button");
+  btn.disabled = true;
+  btn.textContent = "Sending...";
+
+  // 1️⃣ Send email to Pamoja Cargo Team
+  emailjs.sendForm(
+    "service_awlbcfs",
+    "template_mn6ef2a",
+    form
+  )
+  .then(() => {
+
+    // 2️⃣ Send auto-reply to customer
+    return emailjs.sendForm(
+      "service_awlbcfs",
+      "template_5ppm1yh",
+      form
+    );
+
+  })
+  .then(() => {
+    // Success
+    successMsg.style.display = "block";
+    form.reset();
+    btn.textContent = "Request Quote";
+    btn.disabled = false;
+  })
+  .catch((error) => {
+    alert("Something went wrong. Please try again.");
+    console.error("EmailJS Error:", error);
+    btn.textContent = "Request Quote";
+    btn.disabled = false;
+  });
 });
 </script>
 
