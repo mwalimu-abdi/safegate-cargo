@@ -107,7 +107,31 @@
     animation: smoothFall 1.3s ease-out forwards;
 }
   
-  
+ /* ===== MOBILE-ONLY HERO BUTTON COLORS ===== */
+@media (max-width: 480px) {
+
+  /* Rate Us → Orange on phones */
+  .btn-rate {
+    background-color: #ff7a00 !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 18px rgba(255, 122, 0, 0.35);
+  }
+
+  /* Contact Us → Blue on phones */
+  .btn-contact {
+    background-color: #0067ff !important; /* clean blue */
+    border-color: #0067ff !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 18px rgba(0, 103, 255, 0.35);
+  }
+
+  /* Hover / tap feedback on phones */
+  .btn-rate:active,
+  .btn-contact:active {
+    transform: scale(0.96);
+  }
+}
+ 
 
 
 /* HERO TEXT FIXES */
@@ -1946,6 +1970,7 @@ document.addEventListener("click", function (event) {
   
 </body>
 <html></html>
+
 
 
 
