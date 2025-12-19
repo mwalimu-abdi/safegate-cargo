@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://pamojalogistics.co.ke/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://pamojalogistics.co.ke/services.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://pamojalogistics.co.ke/about.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pamojalogistics.co.ke/contact.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pamojalogistics.co.ke/request-quote.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
