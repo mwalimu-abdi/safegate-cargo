@@ -1,17 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our service — Pamoja Cargo</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>SAFEGATE DXB — Cargo Services</title>
+  <meta name="description" content="SAFEGATE DXB — Air, Sea & Land freight, clearing & forwarding. Request a quote, track shipments, and contact us." />
+  <meta name="theme-color" content="#0b3659" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%230b3659%22/></svg>">
+
   <style>
-    
-   /* Dropdown Menu Styling */
-   /* ===== DESKTOP MENU ===== */
+/* ===== DESKTOP MENU ===== */
+ /* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
 .desktop-menu {
   display: none;
   gap: 24px;
@@ -88,15 +94,7 @@
 .desktop-menu a:hover::after {
   transform: scaleX(1);
 }
-/* Each letter */
-
-
-   .letter {
-    opacity: 0;
-    display: inline-block;
-    transform: translateY(-250px) scale(1.1); /* start WAY above */
-    animation: smoothFall 1.3s ease-out forwards;
-}
+/* Dropdown Menu Styling */
 .dropdown-menu {
     position: fixed;
     top: 0;
@@ -283,31 +281,36 @@ body, nav.dropdown-menu {
 /* === ALL ABOVE ARE CLEAN === */
 
 
-/* MAIN SECTION */
-  .services-section {
-    position: relative;
-    padding: 60px 20px;
-    overflow: hidden;
-  }
-
-  /* BACKGROUND IMAGE */
-  .service-backimg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url("data/images/pers.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.55;
-
-    z-index: -1;          /* puts background behind everything */
-    pointer-events: none; /* makes it unclickable */
+#safegate-faqs h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 80px 20px 30px 20px; /* Add extra top padding */
 }
 
- /* BACKGROUND IMAGE */
-  .servic-backimg {
+.faq-container {
+  width: 100%;      /* Take full width */
+  max-width: 1200px; /* Optional, for larger screens */
+  margin: 0 auto;    /* Center the container */
+  padding: 10px;     /* Add some spacing */
+  box-sizing: border-box; /* Ensure padding doesn't break width */
+}
+
+
+.faq-item {
+  position: relative;
+  width: 100%;       /* Full width of container */
+  margin-bottom: 15px;
+}
+
+.faq-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #ddd;
+}
+.service-backimg {
     position: absolute;
     top: 0;
     left: 0;
@@ -321,72 +324,182 @@ body, nav.dropdown-menu {
     z-index: -1;          /* puts background behind everything */
     pointer-events: none; /* makes it unclickable */
 }
-     
-  /* CONTENT ABOVE BACKGROUND */
-  .service-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: auto;
-    color: #000;
-    text-align: center;
+
+.faq-question {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  transition: background 0.3s;
+  padding-left: 10;
+}
+
+.faq-question:hover {
+  background: #f1f1f1;
+}
+
+.faq-left-arrow,
+.faq-arrow {
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+  padding-left: 0px;
+
+}
+.faq-right-arrow,
+.faq-arrow {
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+
+  padding-right: 0px;
+}
+
+.faq-question-text {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.faq-answer {
+  max-height: 0; /* start collapsed */
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 1000px; /* very large to fit any content */
+  padding: 15px 20px;
+}
+@media (max-width: 600px) {
+  .faq-container {
+    padding: 5px; /* Reduce padding on small phones */
   }
 
-  .services-section h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
-    font-weight: bold;
-    padding: 80px 20px 50px 20px; /* Add extra top padding */
+  .faq-item {
+    font-size: 16px; /* Adjust text size if needed */
   }
+}
+    .chat-box {
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-  .services-section p {
-    font-size: 18px;
-    max-width: 900px;
-    margin: 0 auto 40px auto;
-    line-height: 1.6;
-  }
+.chat-header {
+  background: #0056b3;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+  font-weight: bold;
+}
 
-  /* SERVICES GRID */
-  .services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-  }
+.chat-body {
+  height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+}
 
-  /* SERVICE CARD */
-  .service-card {
-    background: #ffffffcc;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: 0.3s;
-  }
+.bot-msg {
+  background: #e7f1ff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
 
-  .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
-  }
+.user-msg {
+  background: #d1ffd7;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: right;
+}
 
-  .service-card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
 
-  .service-card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-  }
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+}
 
-  .service-card p {
-    font-size: 15px;
-    line-height: 1.5;
-  }
+.chat-input button {
+  padding: 10px 15px;
+  background: #0056b3;
+  color: white;
+  border: none;
+}
+.chat-box {
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-/* Footer */
+.chat-header {
+  background: #0056b3;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+  font-weight: bold;
+}
+
+.chat-body {
+  height: 260px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.bot-msg, .user-msg {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 80%;
+}
+
+.bot-msg {
+  background: #e7f1ff;
+}
+
+.user-msg {
+  background: #d1ffd7;
+  text-align: right;
+  margin-left: auto;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+}
+
+.chat-input button {
+  padding: 10px 15px;
+  background: #0056b3;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+     /* Footer */
     footer {
       background: #004a8f;
       color: white;
@@ -415,41 +528,11 @@ body, nav.dropdown-menu {
     .social-icons a:hover {
       color: #00bfff;
     }
-    /* ===== SERVICE CARD ORDER BUTTON ===== */
-
-.order-btn {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 10px 22px;
-  background: #004a8f;        /* keeps your site color */
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 30px;
-  transition: 
-    background-color 0.35s ease,
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-/* Hover effect */
-.order-btn:hover {
-  background: #ff7a00;        /* attractive action color */
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(255, 122, 0, 0.35);
-}
-
-/* Mobile tap safety */
-.order-btn:active {
-  transform: scale(0.96);
-}
 
 
-
-  </style>
-  <body>
-<div class="top-bar">
+</style>
+<body>
+    <div class="top-bar">
     <!-- Left: Menu -->
     <button id="menuToggle" class="menu-btn">☰</button>
 
@@ -471,7 +554,7 @@ body, nav.dropdown-menu {
     <nav class="dropdown-menu" id="dropdownMenu">
         <div class="menu-header">Menu</div>
 
-        <div class="menu-links">
+<div class="menu-links">
             <a href="index.html" class="home-link">Home</a>
             <a href="about.html">About Us</a>
             <a href="service.html">Our Services</a>
@@ -481,192 +564,147 @@ body, nav.dropdown-menu {
             <a href="faqs.html">FAQs</a>
         </div>
 
-        <div class="menu-footer">Delivering with care — Pamoja Cargo.!</div>
+         <div class="menu-footer">Delivering with care — Pamoja Cargo.!</div>
     </nav>
-    <nav class="desktop-menu">
+   <nav class="desktop-menu">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="service.html">Services</a>
   <a href="contacts.html">Contact</a>
+  <a href="review.html">Reviews</a>
   <a href="quotes.html">Quote</a>
+   <a href="faqs.html">FAQs</a>
 </nav>
 </div>
+
+</nav>
 </div>
 
-<section class="services-section">
+</nav>
+</div>
 
-  <!-- ⭐ BACKGROUND IMAGE TAG ⭐ -->
-  
+<section id="safegate-faqs">
+    <div class="service-backimg"></div>
 
-  <div class="service-content">
-    <h2>Our Services</h2>
+  <h2>FAQs</h2>
+  <div class="faq-container">
 
-    <p>
-      At Pamoja Cargo, we provide comprehensive logistics and cargo transportation
-      solutions designed to meet the growing demands of individuals, businesses,
-      and organizations across East Africa. Our services are built on reliability,
-      safety, and efficiency, ensuring that every shipment — large or small —
-      reaches its destination in perfect condition and on schedule.
-
-      <br><br>
-
-      We handle a wide range of cargo types, including personal belongings,
-      commercial merchandise, industrial materials, and specialized shipments.
-      With a strong international network and experienced logistics professionals,
-      we manage the entire shipping process from origin to final delivery,
-      allowing our clients to focus on their core activities with confidence.
-
-      <br><br>
-
-      <strong>Cargo Destinations & Origin Countries</strong><br>
-      Pamoja Cargo connects global markets to East Africa through well-established
-      shipping routes from major origin countries such as Dubai, China, India,
-      Turkey, the United States, Thailand, Canada, and Saudi Arabia. We ensure
-      smooth and secure delivery to key destinations in Kenya, Tanzania, Uganda,
-      and Somalia — including Nairobi, Mombasa, Kisumu, Eldoret, Dar es Salaam,
-      Kampala, and Mogadishu. No matter where your goods originate, we guarantee
-      seamless handling, customs coordination, and timely delivery.
-    </p>
-
-    <div class="services-container">
-
-      <div class="service-card">
-        <img src="data/images/paper.jpg">
-        <h3>Fragile Cargo</h3>
-        <p>
-          We specialize in the careful handling and transportation of fragile and
-          sensitive items such as glassware, electronics, artwork, and precision
-          equipment. Our team uses protective packaging, secure loading methods,
-          and controlled handling processes to minimize risk and ensure your
-          valuable items arrive safely and intact.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Which cargo service near me is best?</span>
+        <span class="faq-arrow">❯</span>
       </div>
-
-      <div class="service-card">
-        <img src="data/images/const.jpg">
-        <h3>Construction Material Hauling</h3>
-        <p>
-          Pamoja Cargo provides reliable transportation for construction materials
-          including cement, steel, tiles, timber, and heavy building supplies.
-          We support construction projects of all sizes by ensuring materials are
-          delivered efficiently, securely, and on time to job sites across the region.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
+      <div class="faq-answer">
+        SAFEGATE DXB Cargo is your trusted cargo partner for fast, affordable, 
+        and safe deliveries from countries like Dubai, China, India, 
+        Turkey, the USA, Thailand, Canada, and Saudi Arabia to Kenya Uganda Tanzania and Somalia. 
+        We ensure smooth handling and reliable shipment tracking for all clients.
       </div>
-
-      <div class="service-card">
-        <img src="data/images/med.jpg">
-        <h3>Medical Equipments</h3>
-        <p>
-          We understand the critical importance of medical logistics. Our medical
-          equipment transport service ensures fast, secure, and compliant delivery
-          of hospital equipment, diagnostic devices, and medical supplies, handled
-          with precision and care to meet healthcare standards.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/house.jpg">
-        <h3>Household Goods Moving</h3>
-        <p>
-          Whether relocating locally or internationally, our household moving
-          services ensure your personal belongings are packed, transported, and
-          delivered safely. From furniture and appliances to personal valuables,
-          we handle your move with professionalism and attention to detail.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/event.jpg">
-        <h3>Event Logistics</h3>
-        <p>
-          We provide complete logistics support for exhibitions, conferences,
-          concerts, and corporate events. Our team manages transport, setup timing,
-          and coordination to ensure all event materials arrive on schedule and
-          are ready for successful execution.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/express.jpg">
-        <h3>Express Cargo</h3>
-        <p>
-          Our express cargo service is designed for urgent shipments that require
-          priority handling and rapid delivery. With optimized routes and fast
-          processing, we ensure time-sensitive cargo reaches its destination
-          without unnecessary delays.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/machine.jpg">
-        <h3>Machine Transport</h3>
-        <p>
-          Pamoja Cargo offers specialized transport solutions for heavy machinery
-          and industrial equipment. Using secure loading techniques and appropriate
-          transport vehicles, we ensure safe movement of large-scale machinery
-          for industrial, agricultural, and commercial use.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/electro.jpg">
-        <h3>Electronic Transport</h3>
-        <p>
-          We handle the transportation of electronic devices and home appliances
-          with extreme care. Our service protects sensitive components from damage,
-          moisture, and impact, ensuring reliable delivery for both retail and
-          personal shipments.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/paper.jpg">
-        <h3>Paper & Lumber Transport</h3>
-        <p>
-          Our paper and lumber transport service supports publishers, manufacturers,
-          and construction businesses. We ensure proper stacking, protection, and
-          secure transport to prevent damage during transit.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/contain.jpg">
-        <h3>Container Trucking</h3>
-        <p>
-          We provide efficient domestic and international container trucking
-          services for full and consolidated loads. Our fleet and logistics
-          coordination ensure safe container movement between ports, warehouses,
-          and final destinations.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
-      <div class="service-card">
-        <img src="data/images/retail.jpg">
-        <h3>Retail Distributions</h3>
-        <p>
-          Pamoja Cargo supports retail businesses with dependable distribution
-          services. We manage supply chains, store deliveries, and inventory
-          movement to help retailers maintain smooth operations and meet
-          customer demand efficiently.
-        </p>
-        <a href="quotes.html" class="order-btn">Order Now</a>
-      </div>
-
+      <span class="faq-line"></span>
     </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Which is the best freight forwarding company in Dubai?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        SAFEGATE DXB Cargo stands out as one of the top freight forwarding companies due to
+         our affordable rates, fast processing, and seamless shipping services to East Africa.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Which company offers the best cargo service to Kenya?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        SAFEGATE DXB Cargo offers the most reliable and customer-friendly 
+        cargo solutions for shipping electronics, clothing, perfumes, 
+        home appliances, commercial goods, and more from multiple
+         countries to Kenya, Uganda, Tanzania and Somalia.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">What cargo services does SAFEGATE DXB Cargo provide?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        We offer air cargo, sea cargo, door-to-door deliveries, commercial cargo, personal shipments,
+         consolidation, and secure handling for fragile items. Customers
+          can ship goods from Dubai, Turkey, China, India, USA, Canada, Thailand, and Saudi Arabia.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Which countries does SAFEGATE DXB Cargo ship from?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        We ship goods from Dubai, China, Turkey, India, USA, Thailand, Saudi Arabia, and Canada — 
+        safely delivered to Kenya, Uganda, Tanzania and Somalia.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">How long does shipping take?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        Shipping times vary depending on the country and method:<br>
+        • Dubai to Kenya: 3–5 days<br>
+        • China to Kenya: 5–10 days<br>
+        • Others depend on the selected shipping option.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">Do you offer door-to-door delivery in Kenya?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        Yes, we offer fast and secure door-to-door delivery across all major cities in a particular country. Exapmle
+       Nairobi, Mombasa, Kisumu, Eldoret in Kenya.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-left-arrow">❮</span>
+        <span class="faq-question-text">What items can I send with SAFEGATE DXB Cargo?</span>
+        <span class="faq-arrow">❯</span>
+      </div>
+      <div class="faq-answer">
+        You can ship electronics, fashion items, phones, perfumes, home goods, cosmetics, 
+        furniture, personal effects, and commercial goods. Restricted items depend
+         on exporting and receiving country`s regulations.
+      </div>
+      <span class="faq-line"></span>
+    </div>
+
   </div>
-</section>
+  </section>
 
-
+    <!-- Footer -->
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
@@ -700,7 +738,7 @@ body, nav.dropdown-menu {
     <!-- Mombasa Office -->
     <p><strong>Mombasa Office</strong><br>
       Hamed: <a href="tel:+254725406665">+254 725 406 665</a><br>
-      Ahmed: <a href="tel:+254724745191">+254 724 745 191</a>
+      
     </p>
 
     <!-- Email -->
@@ -722,7 +760,6 @@ body, nav.dropdown-menu {
     </div>
   </div>
 </footer>
-
 <script>
  const menuBtn = document.getElementById("menuToggle");
 const menu = document.getElementById("dropdownMenu");
@@ -746,7 +783,45 @@ document.addEventListener("click", function (event) {
     }
 });
 
+/*=============================================================
+   4. FAQs
+   ============================================================ */
+const faqItems = document.querySelectorAll('#safegate-faqs .faq-item');
+
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-question');
+  const leftArrow = item.querySelector('.faq-left-arrow');
+  const rightArrow = item.querySelector('.faq-arrow');
+
+  question.addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+
+    // Close all items first
+    faqItems.forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.faq-left-arrow').style.transform = 'rotate(0deg)';
+      i.querySelector('.faq-arrow').style.transform = 'rotate(0deg)';
+    });
+
+    if(!isActive){
+      item.classList.add('active');
+      leftArrow.style.transform = 'rotate(-90deg)';
+      rightArrow.style.transform = 'rotate(90deg)';
+    }
+  });
+});
+
+/*=============================================================
+   4. CHATBOT
+   ============================================================ */
+window.chatbaseConfig = {
+      chatbotId: "YOUR_CHATBOT_ID",
+  };
+</script>
+<script
+  src="https://www.chatbase.co/embed.min.js"
+  defer>
+
 </script>
 </body>
 </html>
-
