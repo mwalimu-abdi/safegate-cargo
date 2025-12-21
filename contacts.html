@@ -9,7 +9,90 @@
 </head>
 <body>
   <style>
-    /* Dropdown Menu Styling */
+/* ===== DESKTOP MENU ===== */
+ /* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+.desktop-menu {
+  display: none;
+  gap: 24px;
+}
+
+.desktop-menu a {
+  position: relative;
+  padding: 8px 4px;
+  font-weight: 600;
+  color: #0a2540;
+  text-decoration: none;
+  transition: color 0.35s ease;
+}
+
+
+/* ===== MOBILE DEFAULT ===== */
+.menu-btn {
+  display: block;
+}
+
+/* ===== DESKTOP VIEW ===== */
+@media (min-width: 900px) {
+
+  /* show desktop menu */
+  .desktop-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  /* hide hamburger */
+  .menu-btn {
+    display: none;
+  }
+
+  /* hide mobile dropdown completely */
+  .dropdown-menu {
+    display: none !important;
+  }
+}
+/* Top & bottom lines */
+.desktop-menu a::before,
+.desktop-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff007c, #6a00ff);
+  transform: scaleX(0);
+  transition: transform 0.35s ease;
+}
+
+/* Top line */
+.desktop-menu a::before {
+  top: 0;
+  transform-origin: left;
+}
+
+/* Bottom line */
+.desktop-menu a::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+/* Hover effect */
+.desktop-menu a:hover {
+  color: #6a00ff;
+}
+
+.desktop-menu a:hover::before {
+  transform: scaleX(1);
+}
+
+.desktop-menu a:hover::after {
+  transform: scaleX(1);
+}
 /* Dropdown Menu Styling */
 .dropdown-menu {
     position: fixed;
@@ -196,7 +279,6 @@ body, nav.dropdown-menu {
 
 /* === ALL ABOVE ARE CLEAN === */
 
-
 /* Container */
 .container {
   max-width: 1200px;
@@ -371,8 +453,20 @@ header p {
             <a href="faqs.html">FAQs</a>
         </div>
 
-        <div class="menu-footer">Delivering with care — Pamoja Cargo.!</div>
+       <div class="menu-footer">Delivering with care — Pamoja Cargo.!</div>
     </nav>
+    <nav class="desktop-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="service.html">Services</a>
+  <a href="contacts.html">Contact</a>
+  <a href="review.html">Reviews</a>
+  <a href="quotes.html">Quote</a>
+   <a href="faqs.html">FAQs</a>
+</nav>
+</div>
+
+</nav>
 </div>
      <!-- Main Contacts -->
   <section class="main-contacts container">
@@ -523,7 +617,6 @@ document.addEventListener("click", function (event) {
 </html>
 
  
-
 
 
 
